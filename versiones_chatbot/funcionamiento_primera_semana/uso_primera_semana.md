@@ -1,3 +1,4 @@
+# _“No hace falta tenerlo todo claro para empezar; hace falta empezar para tenerlo claro.”_
 # Primera Semana — Inicio del Proyecto
 Para empezar a construir el proyecto, lo primero fue comprobar que realmente es viable y que podemos desarrollarlo en 8 semanas sin tener conocimientos avanzados sobre la materia.
 Esta primera fase ha servido para:
@@ -18,20 +19,20 @@ Aunque es algo básico, es una prueba clave de que:
 
 ---
 
-## 🧠 Lógica actual
+## Lógica actual
 
 El sistema se divide en varias partes:
 
-### 🔧 Backend
+### Backend
 - Archivo principal: `server.js`
 - Función: iniciar el servidor en `http://localhost:3000`
 - Es la parte **lógica y estructural** del sistema.
 
-### 🎨 Frontend
+### Frontend
 - HTML + CSS → interfaz visual.
 - `app.js` → gestiona la interacción.
 
-### 🔄 Flujo de funcionamiento
+### Flujo de funcionamiento
 
 1. El usuario escribe un mensaje.
 2. `app.js` recoge ese mensaje.

@@ -1,1 +1,87 @@
-[]
+{
+  "intro": [
+    {
+      "id": 1,
+      "pregunta": "Si tuvieras un día libre sin pantallas, ¿A qué lo dedicarías?",
+      "opciones": [
+        "Crear algo con las manos",
+        "Estar con amigos",
+        "Leer o investigar algo nuevo"
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Qué es lo que más te motiva al empezar un reto?",
+      "opciones": [
+        "El resultado final",
+        "El proceso de aprender",
+        "Ayudar a otros con lo que logremos"
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Cómo te describirían tus amigos en una palabra?",
+      "opciones": [
+        "Creativo/a",
+        "Analítico/a",
+        "El que siempre ayuda"
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Qué actividad te hace perder la noción del tiempo?",
+      "opciones": [
+        "Resolver problemas o puzzles",
+        "Organizar planes o eventos",
+        "Diseñar o dibujar"
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Qué te da más miedo de elegir una carrera?",
+      "opciones": [
+        "Aburrirme pronto",
+        "No ser lo suficientemente bueno/a",
+        "No encontrar trabajo"
+      ]
+    }
+  ],
+
+  "perfil_creativo": [
+    { "pregunta": "¿Te gustaría dedicarte profesionalmente al diseño o prefieres explorar más opciones?" },
+    { "pregunta": "¿Qué herramientas o habilidades crees que necesitas mejorar actualmente?" },
+    { "pregunta": "¿Has pensado en estudiar fuera de España para ampliar tu formación?" }
+  ],
+
+  "perfil_analitico": [
+    { "pregunta": "¿Te agradaría dedicarte a algo relacionado a tus gustos y cualidades?" },
+    { "pregunta": "¿Prefieres física y química o matemáticas y programación?" },
+    { "pregunta": "¿Te gustaría estudiar en tu país o en el extranjero?" }
+  ],
+
+  "perfil_sanitario": [
+    { "pregunta": "¿Tienes claro si prefieres estudiar medicina u otra rama sanitaria?" },
+    { "pregunta": "¿Estás preparado para el nivel de exigencia de estas carreras?" },
+    { "pregunta": "¿Te planteas estudiar en el extranjero o prefieres quedarte en España?" }
+  ],
+
+  "perfil_emprendedor": [
+    { "pregunta": "¿Prefieres orientar tu futuro hacia la ingeniería o hacia la gestión empresarial?" },
+    { "pregunta": "¿Has pensado en emprender mientras estudias?" },
+    { "pregunta": "¿Qué habilidades crees que deberías desarrollar para alcanzar tus objetivos?" }
+  ],
+
+  "mensajes": {
+    "motivadores": [
+      "¡No te preocupes por no tenerlo claro ahora! Estamos aquí para explorar.",
+      "Tus habilidades son únicas y cada respuesta nos acerca un poco más a descubrir dónde brillas.",
+      "Recuerda: el camino profesional no es una línea recta, es una aventura que tú construyes."
+    ],
+    "transicion": [
+      "¡Genial! Con lo que me has contado, ya tengo una idea de tu personalidad.",
+      "Eso suena muy interesante. Vamos a profundizar un poco más.",
+      "Entiendo perfectamente. Cambiemos de tema para ver qué entornos te hacen sentir cómodo/a."
+    ],
+    "final": "¡Hemos llegado al final! Basado en lo que compartimos, aquí tienes unas recomendaciones que podrían encajar contigo."
+  }
+}

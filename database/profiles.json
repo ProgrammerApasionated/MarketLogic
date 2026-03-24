@@ -1,1 +1,42 @@
-[]
+{
+  "analitico": {
+    "keywords": ["ordenadores", "programar", "matemáticas", "retos", "resolver", "puzzles", "investigar"],
+    "descripcion": "Perfil analítico con interés por retos, tecnología y pensamiento lógico.",
+    "actividades": [
+      "Programar",
+      "Estudiar idiomas",
+      "Resolver problemas",
+      "Jugar al ordenador"
+    ]
+  },
+
+  "creativo": {
+    "keywords": ["diseño", "dibujar", "crear", "contenido", "redes", "photoshop", "illustrator"],
+    "descripcion": "Perfil creativo con alta adaptabilidad digital y gusto por la expresión visual.",
+    "actividades": [
+      "Diseñar publicaciones",
+      "Crear contenido",
+      "Aprender herramientas digitales"
+    ]
+  },
+
+  "sanitario": {
+    "keywords": ["biología", "salud", "medicina", "ayudar", "responsabilidad", "vocación"],
+    "descripcion": "Perfil disciplinado con vocación sanitaria y gusto por el estudio científico.",
+    "actividades": [
+      "Estudiar biología",
+      "Leer sobre avances médicos",
+      "Ver documentales científicos"
+    ]
+  },
+
+  "emprendedor": {
+    "keywords": ["negocios", "emprender", "tecnología", "innovación", "liderazgo", "startups"],
+    "descripcion": "Perfil emprendedor con interés por tecnología, negocios e innovación.",
+    "actividades": [
+      "Leer sobre startups",
+      "Crear ideas de negocio",
+      "Aprender programación básica"
+    ]
+  }
+}

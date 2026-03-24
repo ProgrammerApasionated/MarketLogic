@@ -1,1 +1,58 @@
-[]
+{
+  "analitico": {
+    "estudios": [
+      "Ingeniería informática",
+      "Matemáticas",
+      "Ciencia de datos",
+      "Robótica"
+    ],
+    "consejos": [
+      "Busca retos académicos",
+      "Participa en proyectos de programación",
+      "Considera programas como ERASMUS"
+    ],
+    "mensaje_final": "Tu capacidad analítica te abre puertas en tecnología y ciencia."
+  },
+
+  "creativo": {
+    "estudios": [
+      "Diseño gráfico",
+      "Marketing digital",
+      "Comunicación audiovisual"
+    ],
+    "consejos": [
+      "Mejora herramientas como Photoshop o Illustrator",
+      "Explora proyectos creativos personales"
+    ],
+    "mensaje_final": "Tu creatividad es tu mayor fortaleza. Explora carreras visuales y digitales."
+  },
+
+  "sanitario": {
+    "estudios": [
+      "Medicina",
+      "Enfermería",
+      "Biomedicina"
+    ],
+    "consejos": [
+      "Prepárate para carreras exigentes",
+      "Prioriza la vocación sobre la universidad",
+      "Considera estudiar parte de la carrera en el extranjero"
+    ],
+    "mensaje_final": "Tu vocación por ayudar te convierte en un gran candidato para el ámbito sanitario."
+  },
+
+  "emprendedor": {
+    "estudios": [
+      "Ingeniería informática",
+      "ADE",
+      "Marketing",
+      "Emprendimiento"
+    ],
+    "consejos": [
+      "Lee sobre startups y finanzas",
+      "Desarrolla habilidades de liderazgo",
+      "Considera emprender mientras estudias"
+    ],
+    "mensaje_final": "Tu iniciativa y visión te hacen ideal para crear proyectos propios."
+  }
+}

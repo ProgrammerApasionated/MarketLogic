@@ -1,7 +1,12 @@
 console.log(">>> ESTE ES EL SERVER CORRECTO <<<");
 const express = require("express");
 // Importa el framework Express, que facilita la creación de servidores HTTP en Node.js.
-
+const preguntas = require("../database/questions.json");
+const perfiles = require("../database/profiles.json");
+const recomendaciones = require("../database/recommendations.json");
+// Cargar la base de datos JSON
+let paso = 0;
+// Estado temporal para la prueba
 const app = express();
 // Crea una instancia de la aplicación Express. 'app' será nuestro servidor.
 
@@ -30,13 +35,15 @@ app.get("/mensaje", (req, res) => {
 // -------------------------
 app.post("/mensaje", (req, res) => {
   const texto = req.body.texto;
-  // Extrae el campo 'texto' del cuerpo JSON enviado por el cliente.
-
-  res.json({ respuesta: "Has dicho: " + texto });
-  // Devuelve un JSON con la respuesta generada usando el texto recibido.
+  // Si aún quedan preguntas introductorias
+  if (paso < preguntas.intro.length) {
+    const preguntaActual = preguntas.intro[paso].pregunta;
+    paso++;
+    return res.json({ respuesta: preguntaActual });
+  }
+  // Si ya no quedan preguntas
+  res.json({ respuesta: "¡Fin de la prueba! Ya has respondido a todas las preguntas iniciales." });
 });
-// Define una ruta HTTP de tipo POST en /mensaje.
-// Se usa para recibir datos enviados por el cliente (por ejemplo, texto del usuario).
 
 // -------------------------
 // INICIO DEL SERVIDOR

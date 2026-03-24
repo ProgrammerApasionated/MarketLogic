@@ -1,9 +1,59 @@
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   padding: 20px;
+  background: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+/* 
+   Estilo base de la página:
+   - Tipografía limpia y moderna.
+   - Fondo gris muy suave para evitar sensación de vacío.
+   - Uso de flexbox para centrar el contenido tanto horizontal como verticalmente.
+   - Diseño minimalista con enfoque en la claridad visual.
+*/
 }
 
 button {
   padding: 10px 20px;
   font-size: 16px;
+  background-color : #4a90e2;
+  color : white;
+  border : none;
+  border-radius : 6px;
+  cursor : pointer;
+  transition : 0,2s ease;
 }
+button:hover{
+  background-color: #357ab8;
+}
+/* 
+   Botón principal:
+   - Tamaño cómodo para clics.
+   - Color azul suave para transmitir confianza.
+   - Bordes redondeados para un estilo moderno.
+   - Efecto hover con transición para dar feedback visual al usuario.
+*/
+input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 250px;
+  margin-bottom: 15px;
+}
+/* 
+   Campo de entrada:
+   - Padding amplio para mejorar la experiencia al escribir.
+   - Borde suave y redondeado para mantener coherencia visual con el botón.
+   - Ancho fijo para evitar que el input se vea demasiado pequeño.
+   - Margen inferior para separar el input del botón.
+*/
+.container {
+  text-align: center;
+}
+/*  
+  - Usado para centrar todos los elementos de texto del contenedor.
+  - Útil para tener una interfaz más simétrica.
+*/

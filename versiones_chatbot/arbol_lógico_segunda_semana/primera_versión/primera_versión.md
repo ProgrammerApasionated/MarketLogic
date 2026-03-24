@@ -1,7 +1,5 @@
 _“A veces el camino se aclara solo cuando decides avanzar.”_
-
 # Segunda semana – Construcción del Flujo
-
 Para esta semana, nuestro objetivo es, mediante unos perfiles creados, definir el flujo que nuestro chatbot seguirá.  
 Concretamente, hemos creado 4 posibles perfiles, cada uno con ambiciones, intereses y formas de pensar distintas.
 La idea es que, a partir de estos perfiles, podamos encuadrar los gustos personales del usuario en una futura profesión que encaje con él.
@@ -63,7 +61,6 @@ En esta primera versión del flujo:
 - La experiencia de usuario está definida  
 - Los mensajes de transición están integrados  
 - Solo faltan las preguntas base, respuestas típicas y palabras clave  
-
 Una vez tengamos esos elementos, podré:
 - Completar los nodos vacíos  
 - Implementar la lógica de clasificación  
@@ -71,8 +68,6 @@ Una vez tengamos esos elementos, podré:
 - Cerrar el flujo final  
 ---
 ## Reflexión de esta etapa
-
 Esta semana ha sido más de ordenar, estructurar y preparar el terreno que de cerrar cosas.  
 Pero es una parte necesaria: ningún proyecto empieza completo, y esta fase es la que permite que todo lo demás encaje después.
-
 **Capturas con el estado actual en la carpeta `arbol_lógico_segunda_semana/primera_versión`**

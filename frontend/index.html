@@ -2,22 +2,33 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Chatbot Demo</title>
+  <title>Orientador Laboral – MarketLogic</title>
+   <!-- Título claro y coherente con la función de la página -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <h1>Mi primer chatbot</h1>
+<main class="container">
+    <!-- Contenedor principal del contenido -->
+  <h1>Orientador Laboral MarketLogic</h1>
 
-  <input id="input" placeholder="Escribe algo">
+  <p class="subtitulo">Tu camino profesional empieza con una conversación.</p>
+  <!-- Pequeño detalle de estética, para motivar al usuario -->
+
+  <label for = "input" class= "sr-only">¿Qué te gustaría explorar hoy?</label>
+   <!-- Etiqueta accesible para lectores de pantalla -->
+
+  <input id="input" type= "text" placeholder="Bienvenido, define tu perfil">
   <!-- Campo donde el usuario escribe -->
 
-  <button id="btn">Enviar</button>
+  <button id="btn" type = "button" >Enviar</button>
   <!-- Botón que dispara la petición -->
 
   <p id="respuesta"></p>
   <!-- Aquí aparecerá la respuesta del backend -->
 
+</main>
+  <!-- Archivo JavaScript que gestiona la lógica -->
   <script src="app.js"></script>
 </body>
 </html>

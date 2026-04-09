@@ -2,31 +2,27 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Orientador Laboral – MarketLogic</title>
-   <!-- Título claro y coherente con la función de la página -->
+  <title>MarketLogic – Tu camino profesional</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<!-- LOGO SUPERIOR -->
+<header class="header">
+<img src="logo.png" alt="MarketLogic Logo" class="logo">
+<p class="frase-motivadora">Tu camino profesional.</p>
+</header>
+ <!-- CONTENEDOR DEL CHAT -->
+<main class="chat-container">
+    <!-- MENSAJES DEL CHATBOT Y DEL USUARIO -->
+  <div id="messages" class="messages"></div>
 
-<main class="container">
-    <!-- Contenedor principal del contenido -->
-  <h1>Orientador Laboral MarketLogic</h1>
-
-  <p class="subtitulo">Tu camino profesional empieza con una conversación.</p>
-  <!-- Pequeño detalle de estética, para motivar al usuario -->
-
-  <label for = "input" class= "sr-only">¿Qué te gustaría explorar hoy?</label>
-   <!-- Etiqueta accesible para lectores de pantalla -->
-
-  <input id="input" type= "text" placeholder="Bienvenido, define tu perfil">
-  <!-- Campo donde el usuario escribe -->
-
-  <button id="btn" type = "button" >Enviar</button>
-  <!-- Botón que dispara la petición -->
-
-  <p id="respuesta"></p>
-  <!-- Aquí aparecerá la respuesta del backend -->
-
+<!-- INPUT + BOTÓN -->
+<div class="input-area">
+  <textarea id="input" class="message-area" placeholder="¿Qué te gustaría explorar hoy?"></textarea>
+ <div class="button-group">
+  <button class="btn btn-secondary" type="button">Presentación</button>
+  <button class="btn btn-primary" type="button">Enviar</button>
+</div>
 </main>
   <!-- Archivo JavaScript que gestiona la lógica -->
   <script src="app.js"></script>

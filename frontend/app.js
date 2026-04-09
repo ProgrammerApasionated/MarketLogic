@@ -1,5 +1,10 @@
 // Espera a que todo el contenido HTML esté cargado antes de ejecutar el código.
 // Esto garantiza que los elementos del DOM existen cuando intentamos seleccionarlos.
+document.getElementById("messages").innerHTML = `
+  <p style="text-align:center; color:#888; margin-top:100px;">
+    Escribe algo para comenzar la conversación.
+  </p>
+`;
 document.addEventListener("DOMContentLoaded", () => {
 
   // Selecciona el campo de texto donde el usuario escribe su mensaje.

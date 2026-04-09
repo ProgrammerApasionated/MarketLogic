@@ -1,59 +1,175 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background: #f5f7fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-/* 
-   Estilo base de la página:
-   - Tipografía limpia y moderna.
-   - Fondo gris muy suave para evitar sensación de vacío.
-   - Uso de flexbox para centrar el contenido tanto horizontal como verticalmente.
-   - Diseño minimalista con enfoque en la claridad visual.
-*/
+/* VARIABLES */
+:root {
+  --primary-blue: #4A90E2;
+  --primary-hover: #357ABD;
+  --dark-gray: #2A2E35;
+  --text-gray: #6B7280;
+  --border-gray: #D1D5DB;
+  --bg-color: #F9FAFB;
+  --white: #FFFFFF;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color : #4a90e2;
-  color : white;
-  border : none;
-  border-radius : 6px;
-  cursor : pointer;
-  transition : 0,2s ease;
+/* GLOBAL */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--dark-gray);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-button:hover{
-  background-color: #357ab8;
-}
-/* 
-   Botón principal:
-   - Tamaño cómodo para clics.
-   - Color azul suave para transmitir confianza.
-   - Bordes redondeados para un estilo moderno.
-   - Efecto hover con transición para dar feedback visual al usuario.
-*/
-input {
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  width: 250px;
-  margin-bottom: 15px;
-}
-/* 
-   Campo de entrada:
-   - Padding amplio para mejorar la experiencia al escribir.
-   - Borde suave y redondeado para mantener coherencia visual con el botón.
-   - Ancho fijo para evitar que el input se vea demasiado pequeño.
-   - Margen inferior para separar el input del botón.
-*/
-.container {
+
+/* HEADER */
+.header {
   text-align: center;
+  padding-top: 40px;
+  background-color: var(--white);
 }
-/*  
-  - Usado para centrar todos los elementos de texto del contenedor.
-  - Útil para tener una interfaz más simétrica.
-*/
+
+.logo {
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+/* FRASE */
+.frase-motivadora {
+  font-size: 1.2rem;
+  color: var(--text-gray);
+  font-weight: 400;
+  margin: 10px 0 20px;
+  font-style: italic;
+}
+
+/* CONTENEDOR DEL CHAT */
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centra todo */
+  padding: 20px;
+}
+
+/* MENSAJES (si los usas) */
+.messages {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+/* ÁREA DE INPUT */
+.input-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centra el textarea y el botón */
+  width: 100%;
+  max-width: 500px;
+  gap: 20px;
+}
+
+/* CAJA DE TEXTO (limpia, sin bordes fuertes) */
+#input {
+  width: 100%;
+  min-height: 110px;
+  padding: 16px 20px;
+  font-size: 1rem;
+  border-radius: 14px;
+  border: none;                     /* SIN LÍNEAS */
+  background-color: var(--white);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06); /* sombra suave */
+  resize: none;
+  box-sizing: border-box;
+}
+
+/* BOTÓN ENVIAR (pequeño, centrado) */
+#btn {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 10px 26px;       /* más pequeño */
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  align-self: center;       /* centrado */
+}
+
+#btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+/* CONTENEDOR DEL CHAT */
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ÁREA DE INPUT */
+.input-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  gap: 16px;
+}
+
+/* CAJA DE TEXTO */
+#input {
+  width: 100%;
+  min-height: 110px;
+  padding: 16px 20px;
+  font-size: 1rem;
+  border-radius: 14px;
+  border: none;
+  background-color: var(--white);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+  resize: none;
+  box-sizing: border-box;
+}
+
+/* CONTENEDOR DE BOTONES */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+/* ESTILO BASE DE BOTONES */
+.btn {
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-family: inherit;
+}
+
+/* BOTÓN GRIS: PRESENTACIÓN */
+.btn-secondary {
+  background-color: #E5E7EB;
+  color: #4B5563;
+  border: 1px solid #D1D5DB;
+}
+
+.btn-secondary:hover {
+  background-color: #D1D5DB;
+}
+
+/* BOTÓN AZUL: ENVIAR */
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: 1px solid var(--primary-blue);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}

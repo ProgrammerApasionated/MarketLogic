@@ -11,6 +11,7 @@
 <img src="logo.png" alt="MarketLogic Logo" class="logo">
 <p class="frase-motivadora">Tu camino profesional.</p>
 </header>
+<img src="icono.png" alt="MarketLogic Icon" class="logo-secundario">
  <!-- CONTENEDOR DEL CHAT -->
 <main class="chat-container">
     <!-- MENSAJES DEL CHATBOT Y DEL USUARIO -->
@@ -18,13 +19,14 @@
 
 <!-- INPUT + BOTÓN -->
 <div class="input-area">
-  <textarea id="input" class="message-area" placeholder="¿Qué te gustaría explorar hoy?"></textarea>
+  <textarea id="input" placeholder="¿Qué te gustaría explorar hoy?"></textarea>
  <div class="button-group">
-  <button class="btn btn-secondary" type="button">Presentación</button>
-  <button class="btn btn-primary" type="button">Enviar</button>
+  <button id="presentacion" class="btn btn-secondary" type="button">Presentación</button>
+  <button id="btn" class="btn btn-primary" type="button">Enviar</button>
+ </div>
 </div>
 </main>
   <!-- Archivo JavaScript que gestiona la lógica -->
-  <script src="app.js"></script>
+<script src="app.js" defer></script>
 </body>
 </html>

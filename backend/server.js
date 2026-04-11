@@ -1,12 +1,15 @@
 console.log(">>> ESTE ES EL SERVER CORRECTO <<<");
 const express = require("express");
 // Importa el framework Express, que facilita la creación de servidores HTTP en Node.js.
+
 const preguntas = require("../database/questions.json");
 const perfiles = require("../database/profiles.json");
 const recomendaciones = require("../database/recommendations.json");
 // Cargar la base de datos JSON
+
 let paso = 0;
-// Estado temporal para la prueba
+// Estado temporal para la prueba (se reiniciará con /reset)
+
 const app = express();
 // Crea una instancia de la aplicación Express. 'app' será nuestro servidor.
 
@@ -26,23 +29,30 @@ app.get("/mensaje", (req, res) => {
   res.json({ respuesta: "Hola, soy el chatbot" });
   // Envía un objeto JSON como respuesta: { "respuesta": "Hola, soy el chatbot" }
 });
-// Define una ruta HTTP de tipo GET en /mensaje.
-// req = datos de la petición del cliente.
-// res = objeto para enviar la respuesta al cliente.
 
 // -------------------------
-// RUTA POST
+// RUTA POST (flujo de preguntas)
 // -------------------------
 app.post("/mensaje", (req, res) => {
   const texto = req.body.texto;
+
   // Si aún quedan preguntas introductorias
   if (paso < preguntas.intro.length) {
     const preguntaActual = preguntas.intro[paso].pregunta;
-    paso++;
+    paso++; // Avanza al siguiente paso
     return res.json({ respuesta: preguntaActual });
   }
+
   // Si ya no quedan preguntas
-  res.json({ respuesta: "¡Fin de la prueba! Ya has respondido a todas las preguntas iniciales." });
+  res.json({ respuesta: preguntas.mensajes.final });
+});
+
+// -------------------------
+// ⭐ RUTA PARA REINICIAR EL PASO
+// -------------------------
+app.get("/reset", (req, res) => {
+  paso = 0; // Reinicia el contador de preguntas
+  res.json({ ok: true });
 });
 
 // -------------------------
@@ -52,5 +62,4 @@ app.listen(3000, () => {
   console.log("Servidor funcionando en http://localhost:3000");
 });
 // Inicia el servidor en el puerto 3000.
-// La función callback se ejecuta cuando el servidor está listo.
 // A partir de aquí, el backend escucha peticiones en http://localhost:3000

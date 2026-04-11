@@ -47,30 +47,56 @@
     }
   ],
 
-  "perfil_creativo": [
-    { "pregunta": "¿Te gustaría dedicarte profesionalmente al diseño o prefieres explorar más opciones?" },
-    { "pregunta": "¿Qué herramientas o habilidades crees que necesitas mejorar actualmente?" },
-    { "pregunta": "¿Has pensado en estudiar fuera de España para ampliar tu formación?" }
+   "joven_desorientado": [
+    {
+      "pregunta": "Antes de apuntarte a un curso, ¿qué es lo que más te cuesta a la hora de decidir tu futuro profesional?",
+      "respuestas_tipicas": [
+        "Sinceramente, no tengo ni idea de lo que quiero hacer. Me gustan los videojuegos y las redes sociales, pero no sé cómo convertir eso en un trabajo real.",
+        "Me agobia que me pidan elegir ya a qué me quiero dedicar el resto de mi vida. Necesito probar cosas o que alguien me diga para qué soy bueno."
+      ]
+    },
+    {
+      "pregunta": "Si pudieras tener un asistente en tu móvil para encontrar trabajo, ¿qué te gustaría que hiciera por ti?",
+      "respuestas_tipicas": [
+        "Me gustaría que me hiciera un par de preguntas rápidas y me dijera directamente: 'oye, a ti te pega estudiar esto' sin tener que leer documentos largos.",
+        "Que me muestre trabajos que sean divertidos y me diga qué necesito aprender exactamente para que me contraten en mi ciudad."
+      ]
+    }
   ],
 
-  "perfil_analitico": [
-    { "pregunta": "¿Te agradaría dedicarte a algo relacionado a tus gustos y cualidades?" },
-    { "pregunta": "¿Prefieres física y química o matemáticas y programación?" },
-    { "pregunta": "¿Te gustaría estudiar en tu país o en el extranjero?" }
+  "buscador_formacion_activo": [
+    {
+      "pregunta": "Cuando entras a una plataforma de cursos con decenas de opciones, ¿cómo decides en cuál matricularte?",
+      "respuestas_tipicas": [
+        "Al principio leo los títulos a ver cuál suena mejor, pero a veces me pierdo entre tantas opciones, me saturo y acabo cerrando la página.",
+        "Intento buscar el que crea que me va a dar trabajo más rápido, pero es difícil saber si ese curso realmente lo están pidiendo las empresas de mi zona."
+      ]
+    },
+    {
+      "pregunta": "¿Qué tipo de ayuda te haría falta para aprovechar mejor un catálogo de formación online?",
+      "respuestas_tipicas": [
+        "Un sistema que funcione como Netflix o Spotify: que analice mi perfil y me diga 'basado en tus intereses, estos son los 3 cursos perfectos para ti'.",
+        "Me gustaría ver una ruta clara. Que me diga: si haces este curso, ganarás esta habilidad, y estas 5 empresas locales buscan exactamente ese perfil."
+      ]
+    }
   ],
 
-  "perfil_sanitario": [
-    { "pregunta": "¿Tienes claro si prefieres estudiar medicina u otra rama sanitaria?" },
-    { "pregunta": "¿Estás preparado para el nivel de exigencia de estas carreras?" },
-    { "pregunta": "¿Te planteas estudiar en el extranjero o prefieres quedarte en España?" }
+  "adulto_reinsercion_laboral": [
+    {
+      "pregunta": "¿Cuál es tu mayor frustración con los servicios de orientación y empleo tradicionales actuales?",
+      "respuestas_tipicas": [
+        "La lentitud. Tienes que pedir cita, esperar semanas para que te atienda un orientador presencialmente, y para entonces la oferta de trabajo ya ha volado.",
+        "Que los procesos están muy poco modernizados al principio, pero luego las empresas te exigen saber usar herramientas digitales que nadie te ha enseñado bien a usar."
+      ]
+    },
+    {
+      "pregunta": "¿Qué cambiarías del proceso de diagnóstico para hacerlo más útil para ti?",
+      "respuestas_tipicas": [
+        "Me gustaría poder hacer una evaluación inicial desde mi casa, sin pedir cita previa, para ganar tiempo y saber qué cursos de actualización necesito cuanto antes.",
+        "Quisiera que el diagnóstico sirviera para algo práctico inmediato, es decir, que mi perfil llegue directamente a las empresas locales y no se quede solo en un papel."
+      ]
+    }
   ],
-
-  "perfil_emprendedor": [
-    { "pregunta": "¿Prefieres orientar tu futuro hacia la ingeniería o hacia la gestión empresarial?" },
-    { "pregunta": "¿Has pensado en emprender mientras estudias?" },
-    { "pregunta": "¿Qué habilidades crees que deberías desarrollar para alcanzar tus objetivos?" }
-  ],
-
   "mensajes": {
     "motivadores": [
       "¡No te preocupes por no tenerlo claro ahora! Estamos aquí para explorar.",

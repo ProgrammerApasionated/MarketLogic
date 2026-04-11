@@ -8,6 +8,10 @@
   --bg-color: #F9FAFB;
   --white: #FFFFFF;
 }
+main {
+    margin: 0;
+    padding: 0;
+}
 
 /* GLOBAL */
 body {
@@ -24,7 +28,7 @@ body {
 /* HEADER */
 .header {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 0;
   background-color: var(--white);
 }
 
@@ -32,7 +36,12 @@ body {
   height: 70px;
   margin-bottom: 10px;
 }
-
+.logo-secundario {
+    width: 200px;
+    display: block;
+    margin: 10px auto 10px auto;
+    opacity: 0.95;
+}
 /* FRASE */
 .frase-motivadora {
   font-size: 1.2rem;
@@ -41,21 +50,14 @@ body {
   margin: 10px 0 20px;
   font-style: italic;
 }
-
-/* CONTENEDOR DEL CHAT */
-.chat-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;     /* centra todo */
-  padding: 20px;
-}
-
-/* MENSAJES (si los usas) */
+/* MENSAJES */
 .messages {
   width: 100%;
   max-width: 600px;
-  margin-bottom: 20px;
+  min-height: 200px;   /* 👈 ESTO ES LO QUE FALTABA */
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;     /* 👈 Permite scroll si hay muchos mensajes */
 }
 
 /* ÁREA DE INPUT */
@@ -70,6 +72,7 @@ body {
 
 /* CAJA DE TEXTO (limpia, sin bordes fuertes) */
 #input {
+  
   width: 100%;
   min-height: 110px;
   padding: 16px 20px;
@@ -106,7 +109,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 0px;
 }
 
 /* ÁREA DE INPUT */
@@ -172,4 +175,24 @@ body {
 
 .btn-primary:hover {
   background-color: var(--primary-hover);
+}
+.bot-message {
+  background: #E5E7EB;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 10px;
+  color: #111;
+  width: fit-content;
+  max-width: 90%;
+}
+
+.user-message {
+  background: #4A90E2;
+  color: white;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 10px;
+  width: fit-content;
+  max-width: 90%;
+  margin-left: auto; /* 👈 Alinea a la derecha */
 }

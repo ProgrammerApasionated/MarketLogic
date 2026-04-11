@@ -1,40 +1,76 @@
 // Espera a que todo el contenido HTML esté cargado antes de ejecutar el código.
-// Esto garantiza que los elementos del DOM existen cuando intentamos seleccionarlos.
-document.getElementById("messages").innerHTML = `
-  <p style="text-align:center; color:#888; margin-top:100px;">
-    Escribe algo para comenzar la conversación.
-  </p>
-`;
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
-  // Selecciona el campo de texto donde el usuario escribe su mensaje.
+  // Selecciona los elementos del DOM
   const input = document.getElementById("input");
-
-  // Selecciona el botón que el usuario pulsará para enviar el mensaje.
   const btn = document.getElementById("btn");
+  const messages = document.getElementById("messages");
 
-  // Selecciona el párrafo donde mostraremos la respuesta del backend.
-  const respuesta = document.getElementById("respuesta");
+  // -------------------------
+  //  REINICIAR EL BACKEND ANTES DE EMPEZAR
+  // -------------------------
+  // Desactivamos el botón para evitar que el usuario envíe antes de tiempo
+  btn.disabled = true;
 
-  // Añade un "listener" al botón: cuando el usuario haga clic, se ejecutará esta función.
-  // La función es async porque dentro usaremos 'await' para esperar la respuesta del servidor.
+  console.log("Reiniciando backend...");
+  await fetch("http://localhost:3000/reset"); //  IMPORTANTE: esperar a que termine
+  console.log("Backend reiniciado");
+
+  // Activamos el botón cuando el backend ya está listo
+  btn.disabled = false;
+
+  // Mensaje inicial
+  messages.innerHTML = `
+    <p style="text-align:center; color:#888; margin-top:10px;">
+      Tu futuro empieza con una conversación.
+    </p>
+  `;
+
+  // -------------------------
+  // EVENTO CLICK DEL BOTÓN
+  // -------------------------
   btn.addEventListener("click", async () => {
 
     // Obtiene el texto que el usuario ha escrito en el input.
-    const texto = input.value;
+    const texto = input.value.trim();
+    if (!texto) return;
+
+    // Añade el mensaje del usuario al chat.
+    messages.innerHTML += `
+      <div class="user-message">${texto}</div>
+    `;
 
     // Realiza una petición HTTP al backend usando fetch.
-    // Enviamos una petición POST a la ruta /mensaje del servidor.
     const res = await fetch("http://localhost:3000/mensaje", {
-      method: "POST", // Tipo de petición: POST (envía datos)
-      headers: { "Content-Type": "application/json" }, // Indicamos que enviamos JSON
-      body: JSON.stringify({ texto }) // Convertimos el objeto JS a JSON: { "texto": "lo que escribió el usuario" }
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ texto })
     });
 
-    // Espera a que el servidor responda y convierte la respuesta JSON en un objeto JS.
+    // Espera la respuesta del servidor
     const data = await res.json();
 
-    // Actualiza el contenido del párrafo con la respuesta del backend.
-    respuesta.textContent = data.respuesta;
+    // Añade el mensaje del bot al chat.
+    messages.innerHTML += `
+      <div class="bot-message">${data.respuesta}</div>
+    `;
+
+    // -------------------------
+    //  DETECTAR FIN DE LA PRUEBA
+    // -------------------------
+    if (data.respuesta.includes("Fin de la prueba") ||
+        data.respuesta.includes("Hemos llegado al final")) {
+
+      input.disabled = true;
+      btn.disabled = true;
+
+      return;
+    }
+
+    // Limpia el campo de texto
+    input.value = "";
+
+    // Hace scroll automático hacia abajo
+    messages.scrollTop = messages.scrollHeight;
   });
 });

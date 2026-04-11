@@ -1,58 +1,49 @@
 {
-  "analitico": {
-    "estudios": [
-      "Ingeniería informática",
-      "Matemáticas",
-      "Ciencia de datos",
-      "Robótica"
+  "joven_desorientado": {
+    "necesidades": [
+      "Orientación vocacional inicial ágil y digital",
+      "Descubrir intereses sin presión",
+      "Ejemplos claros de trabajos relacionados con sus gustos",
+      "Recomendaciones rápidas basadas en pocas preguntas"
     ],
-    "consejos": [
-      "Busca retos académicos",
-      "Participa en proyectos de programación",
-      "Considera programas como ERASMUS"
+    "lo_que_valora": [
+      "Lenguaje cercano",
+      "Indicaciones directas",
+      "Opciones divertidas o motivadoras",
+      "Saber qué habilidades necesita para un trabajo concreto"
     ],
-    "mensaje_final": "Tu capacidad analítica te abre puertas en tecnología y ciencia."
+    "mensaje_final": "Gracias por compartir tus inquietudes. Tu camino profesional no tiene por qué estar decidido aún; lo importante es explorar y descubrir qué encaja contigo paso a paso."
   },
 
-  "creativo": {
-    "estudios": [
-      "Diseño gráfico",
-      "Marketing digital",
-      "Comunicación audiovisual"
+  "buscador_formacion_activo": {
+    "necesidades": [
+      "Recomendaciones personalizadas de cursos",
+      "Evitar la saturación del catálogo",
+      "Conexión clara entre cursos y empleo real",
+      "Rutas formativas simples y visuales"
     ],
-    "consejos": [
-      "Mejora herramientas como Photoshop o Illustrator",
-      "Explora proyectos creativos personales"
+    "lo_que_valora": [
+      "Sistemas tipo Netflix/Spotify que sugieran cursos",
+      "Información sobre qué empresas buscan esas habilidades",
+      "Claridad en las salidas profesionales",
+      "Ahorro de tiempo al elegir formación"
     ],
-    "mensaje_final": "Tu creatividad es tu mayor fortaleza. Explora carreras visuales y digitales."
+    "mensaje_final": "Gracias por explorar tus opciones formativas. Con una guía clara y recomendaciones personalizadas, podrás avanzar hacia cursos que realmente impulsen tu empleabilidad."
   },
 
-  "sanitario": {
-    "estudios": [
-      "Medicina",
-      "Enfermería",
-      "Biomedicina"
+  "adulto_reinsercion_laboral": {
+    "necesidades": [
+      "Procesos más ágiles sin cita previa",
+      "Evaluación inicial desde casa",
+      "Actualización de competencias digitales",
+      "Conexión directa con empresas locales"
     ],
-    "consejos": [
-      "Prepárate para carreras exigentes",
-      "Prioriza la vocación sobre la universidad",
-      "Considera estudiar parte de la carrera en el extranjero"
+    "lo_que_valora": [
+      "Rapidez en la orientación",
+      "Herramientas digitales fáciles de usar",
+      "Diagnósticos que sirvan para algo práctico",
+      "Evitar burocracia innecesaria"
     ],
-    "mensaje_final": "Tu vocación por ayudar te convierte en un gran candidato para el ámbito sanitario."
-  },
-
-  "emprendedor": {
-    "estudios": [
-      "Ingeniería informática",
-      "ADE",
-      "Marketing",
-      "Emprendimiento"
-    ],
-    "consejos": [
-      "Lee sobre startups y finanzas",
-      "Desarrolla habilidades de liderazgo",
-      "Considera emprender mientras estudias"
-    ],
-    "mensaje_final": "Tu iniciativa y visión te hacen ideal para crear proyectos propios."
+    "mensaje_final": "Gracias por compartir tu situación. Con procesos más ágiles y una actualización digital adecuada, podrás conectar con oportunidades reales en tu entorno laboral."
   }
 }

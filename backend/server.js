@@ -88,6 +88,8 @@ app.post('/mensaje', (req, res) => {
         estado.respuestas.push(texto);
     }
 
+    // --- MÁQUINA DE ESTADOS ---
+    // 1. Pasa de intro a especificas
     if (estado.fase === 'intro' && estado.paso >= preguntas.intro.length) {
         estado.fase = 'especificas';
         estado.perfil = calcularPerfil(estado.respuestas);
@@ -95,30 +97,48 @@ app.post('/mensaje', (req, res) => {
         estado.transicionPendiente = true;
     }
 
+    // 2. Pasa de especificas a cierre (NUEVA FASE DE LA TAREA 12)
     if (estado.fase === 'especificas' && estado.paso >= preguntas[estado.perfil].length) {
+        estado.fase = 'cierre';
+        estado.paso = 0;
+        estado.transicionPendiente = true;
+    }
+
+    // 3. Pasa de cierre al final
+    if (estado.fase === 'cierre' && estado.paso >= preguntas.cierre.length) {
         estado.fase = 'final';
     }
 
+    // --- ENVÍO DE RESPUESTAS ---
+    let mensajeExtra = null;
+
+    // Lógica para mensajes Transitorios y Motivacionales
+    if (estado.transicionPendiente) {
+        // Coge un mensaje transitorio aleatorio
+        const randomTrans = Math.floor(Math.random() * preguntas.mensajes.transitorios.length);
+        mensajeExtra = preguntas.mensajes.transitorios[randomTrans];
+        estado.transicionPendiente = false;
+    } else if (texto !== "START_FLOW" && estado.respuestas.length % 3 === 0 && estado.fase !== 'final') {
+        // Cada 3 respuestas, mandamos un mensaje motivacional aleatorio
+        const randomMotiv = Math.floor(Math.random() * preguntas.mensajes.motivacionales.length);
+        mensajeExtra = preguntas.mensajes.motivacionales[randomMotiv];
+    }
+
+    // Entregar la pregunta según la fase
     if (estado.fase === 'intro') {
         const p = preguntas.intro[estado.paso];
         estado.paso++;
-        return res.json({ respuesta: p.pregunta, opciones: p.opciones });
+        return res.json({ extra: mensajeExtra, respuesta: p.pregunta, opciones: p.opciones });
         
     } else if (estado.fase === 'especificas') {
         const p = preguntas[estado.perfil][estado.paso];
         estado.paso++;
-        
-        let mensajeExtra = null;
-        if (estado.transicionPendiente) {
-            mensajeExtra = preguntas.mensajes.transicion[0];
-            estado.transicionPendiente = false;
-        }
+        return res.json({ extra: mensajeExtra, respuesta: p.pregunta, opciones: p.opciones });
 
-        return res.json({ 
-            extra: mensajeExtra, 
-            respuesta: p.pregunta, 
-            opciones: p.opciones 
-        });
+    } else if (estado.fase === 'cierre') {
+        const p = preguntas.cierre[estado.paso];
+        estado.paso++;
+        return res.json({ extra: mensajeExtra, respuesta: p.pregunta, opciones: p.opciones });
 
     } else if (estado.fase === 'final') {
         const perfilFinal = estado.perfil;
@@ -139,18 +159,3 @@ app.post('/mensaje', (req, res) => {
         });
     }
 });
-
-app.get('/reset', (req, res) => {
-    estado = { fase: 'intro', paso: 0, respuestas: [], perfil: null, transicionPendiente: false };
-    res.json({ ok: true });
-});
-
-app.get('/ver-datos', (req, res) => {
-    db.all("SELECT * FROM historial ORDER BY fecha DESC", [], (err, rows) => {
-        if (err) return res.status(500).send(err.message);
-        res.json(rows);
-    });
-});
-
-// ARRANQUE DINÁMICO
-app.listen(PORT, () => console.log(`Servidor Online en puerto ${PORT}`));

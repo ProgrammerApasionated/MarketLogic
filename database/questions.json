@@ -1,64 +1,44 @@
 {
   "intro": [
     {
-      "id": 1,
-      "pregunta": "Si tuvieras un día libre sin pantallas, ¿A qué lo dedicarías?",
-      "opciones": ["Crear algo con las manos", "Hacer actividad física", "Leer o investigar algo nuevo", "Organizar planes con gente"]
+      "pregunta": "Todos tenemos esos temas en los que nos perdemos durante horas viendo vídeos o leyendo sin darnos cuenta del tiempo. Esas pequeñas obsesiones esconden grandes pistas sobre tu futuro. Imagina que hoy tienes el día completamente libre, sin presiones, y decides aprender algo nuevo por pura curiosidad. ¿Qué tema elegirías sin pensarlo dos veces?",
+      "opciones": ["Tecnología y código", "Arte y diseño", "Negocios", "Ayudar a otros"]
     },
     {
-      "id": 2,
-      "pregunta": "¿Qué es lo que más te motiva al empezar un reto?",
-      "opciones": ["El resultado final", "El proceso de aprender", "Ayudar a otros con lo que logremos"]
+      "pregunta": "En cualquier grupo, cada persona tiene un 'superpoder' natural. Algunos son los que organizan el caos, otros los que arreglan los problemas técnicos, y otros los que saben vender la idea al final. Piensa en la última vez que hiciste un trabajo en equipo en el que te sentiste genial: ¿Cuál fue ese rol en el que fluiste con mayor naturalidad y sentiste que aportabas más valor?",
+      "opciones": ["El organizador", "El creativo", "El técnico", "El mediador"]
     },
     {
-      "id": 3,
-      "pregunta": "¿Cómo te describirían tus amigos en una palabra?",
-      "opciones": ["Creativo/a", "Analítico/a", "El que siempre ayuda"]
+      "pregunta": "Pasamos gran parte de nuestra vida trabajando, así que es vital que lo que hagamos nos encienda una chispa. Hay quienes necesitan dejar su huella creando cosas desde cero, quienes encuentran su propósito ayudando directamente a otros, o quienes aman el reto de dominar algo muy complejo. Si pudieras pedir un deseo para tu próximo trabajo, ¿cuál de estas motivaciones sería totalmente innegociable para ti?",
+      "opciones": ["Crear desde cero", "Ayudar a otros", "Resolver retos", "Estabilidad"]
     },
     {
-      "id": 4,
-      "pregunta": "¿Qué actividad te hace perder la noción del tiempo?",
-      "opciones": ["Resolver problemas o puzzles", "Organizar planes o eventos", "Crear manual o electrónicamente"]
-    },
-    {
-      "id": 5,
-      "pregunta": "¿Qué te da más miedo de elegir una carrera?",
-      "opciones": ["Aburrirme pronto / que la carrera no sea lo que esperaba", "No ser lo suficientemente bueno/a", "No encontrar trabajo"]
+      "pregunta": "El lugar y la forma en que trabajamos impactan muchísimo en nuestra creatividad y energía. Algunas personas brillan con el bullicio y el contacto constante de una oficina dinámica, mientras que otras necesitan su propio espacio y la libertad total de gestionar sus horarios. Trata de visualizarte en un martes cualquiera dentro de unos años: ¿En qué tipo de entorno te ves siendo tu mejor versión profesional?",
+      "opciones": ["Oficina dinámica", "Remoto y libre", "Trabajo de campo", "Taller o estudio"]
     }
   ],
-  "joven_desorientado": [
-    { 
-      "pregunta": "¿Qué es lo que más te cuesta a la hora de decidir tu futuro profesional?",
-      "opciones": ["No sé qué me gusta", "Me abruman tantas opciones", "Me da miedo equivocarme"]
+  "cierre": [
+    {
+      "pregunta": "El mundo laboral cambia a la velocidad de la luz. Pensando en tu futuro profesional a largo plazo, ¿qué te entusiasma más: profundizar hasta convertirte en el mayor experto/a en un tema muy específico, o ser un perfil 'todoterreno' capaz de conectar diferentes mundos y aprender cosas nuevas constantemente?",
+      "opciones": ["Ser experto", "Ser todoterreno"]
     },
-    { 
-      "pregunta": "Si pudieras tener un asistente en tu móvil, ¿qué te gustaría que hiciera?",
-      "opciones": ["Sugerirme trabajos según mis gustos", "Decirme qué estudiar para ganar bien", "Enseñarme ejemplos de trabajos reales"]
-    }
-  ],
-  "buscador_formacion_activo": [
-    { 
-      "pregunta": "Cuando ves un catálogo con cientos de cursos, ¿cómo decides?",
-      "opciones": ["Busco el que tiene más salida laboral", "El que me ayude a mejorar mi CV", "El que sea más corto y práctico"]
-    },
-    { 
-      "pregunta": "¿Qué tipo de ayuda necesitas para no perderte entre tanta formación?",
-      "opciones": ["Un recomendador tipo Netflix", "Saber qué empresas buscan ese curso", "Una ruta de estudio paso a paso"]
-    }
-  ],
-  "adulto_reinsercion_laboral": [
-    { 
-      "pregunta": "¿Cuál es tu mayor frustración con los servicios de empleo actuales?",
-      "opciones": ["La lentitud burocrática", "La falta de ofertas para mi edad", "Tener que ir en persona para todo"]
-    },
-    { 
-      "pregunta": "¿Qué herramienta digital te sería más útil ahora mismo?",
-      "opciones": ["Citas previas más rápidas", "Diagnóstico de mis competencias desde casa", "Contacto directo con empresas locales"]
+    {
+      "pregunta": "Para ir cerrando este primer mapa de tu talento: Si hoy mismo te pusieran sobre la mesa la oportunidad de empezar en ese trabajo ideal que estamos dibujando juntos, ¿cuál crees que sería tu mayor reto o el pequeño empujón (formación, confianza, contactos...) que te faltaría para dar el 'sí' con total seguridad?",
+      "opciones": ["Formación técnica", "Más confianza", "Contactos clave", "Saber por dónde empezar"]
     }
   ],
   "mensajes": {
-    "motivadores": ["¡Tus respuestas nos ayudan mucho!", "Cada paso cuenta en este camino."],
-    "transicion": ["¡Genial! Con lo que me has contado, ya tengo una idea de tu personalidad.", "Entiendo perfectamente. Vamos a profundizar un poco más."],
-    "final": "¡Hemos llegado al final! Basado en lo que compartimos, aquí tienes unas recomendaciones que podrían encajar contigo."
+    "transitorios": [
+      "¡Súper interesante! Tomo nota de esto para tu perfil. Ahora, cambiemos un poco de perspectiva...",
+      "Me encanta por dónde vas. Ya voy viendo un patrón aquí. Sigamos escarbando un poco más:",
+      "Esa es una gran respuesta, dice mucho de tu forma de trabajar. Pasemos a otro aspecto igual de importante...",
+      "¡Anotado! Vamos con la siguiente pieza del rompecabezas:"
+    ],
+    "motivacionales": [
+      "Sé que a veces es difícil definirse a uno mismo, pero lo estás haciendo genial. Cada respuesta nos acerca un poco más a ese 'match' laboral perfecto.",
+      "Recuerda que aquí no hay respuestas correctas ni incorrectas. Solo estamos mapeando lo que te hace único. ¡Sigue así!",
+      "¡Qué buena sesión estamos teniendo! Ya casi tenemos el cuadro completo de tu perfil. Vamos a por el último esfuerzo."
+    ],
+    "final": "¡Genial! He analizado todas tus respuestas y ya tengo tu mapa de talento."
   }
 }

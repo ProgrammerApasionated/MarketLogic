@@ -1,18 +1,36 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const sqlite3 = require('sqlite3').verbose(); // Importamos el driver de la base de datos
+const sqlite3 = require('sqlite3').verbose(); 
+
 const app = express();
+// Render asigna un puerto automáticamente, por eso usamos process.env.PORT
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
-// 1. CARGA DE ARCHIVOS JSON
+// ==========================================
+// 1. SERVIR EL FRONTEND (SOLUCIÓN AL 404)
+// ==========================================
+// Le decimos que los archivos están en la carpeta "frontend" (un nivel arriba de backend)
+app.use(express.static(path.join(__dirname, '..', 'frontend')));
+
+// Ruta principal para cargar la web
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
+});
+
+// ==========================================
+// 2. CARGA DE ARCHIVOS JSON
+// ==========================================
 const preguntas = require(path.join(__dirname, "../database/questions.json"));
 const recomendaciones = require(path.join(__dirname, "../database/recommendations.json"));
 const perfiles = require(path.join(__dirname, "../database/profiles.json"));
 
-// 2. CONEXIÓN A LA BASE DE DATOS SQLITE
+// ==========================================
+// 3. CONEXIÓN A LA BASE DE DATOS SQLITE
+// ==========================================
 const dbPath = path.join(__dirname, "../database/db.sqlite");
 const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
@@ -22,7 +40,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
     }
 });
 
-// Crear la tabla para guardar historiales si no existe ya
+// Crear la tabla si no existe
 db.run(`CREATE TABLE IF NOT EXISTS historial (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     perfil TEXT,
@@ -30,7 +48,9 @@ db.run(`CREATE TABLE IF NOT EXISTS historial (
     fecha DATETIME DEFAULT CURRENT_TIMESTAMP
 )`);
 
-// 3. ESTADO DEL USUARIO
+// ==========================================
+// 4. LÓGICA DEL CHATBOT
+// ==========================================
 let estado = { 
     fase: 'intro', 
     paso: 0, 
@@ -39,7 +59,6 @@ let estado = {
     transicionPendiente: false 
 };
 
-// 4. FUNCIÓN CALCULADORA DE PERFILES
 function calcularPerfil(respuestas) {
     const texto = respuestas.join(" ").toLowerCase();
     let ganador = "joven_desorientado";
@@ -58,16 +77,17 @@ function calcularPerfil(respuestas) {
     return ganador;
 }
 
-// 5. RUTA PRINCIPAL DEL CHAT
+// ==========================================
+// 5. RUTAS DEL API
+// ==========================================
+
 app.post('/mensaje', (req, res) => {
     const { texto } = req.body;
     
-    // Guardar respuesta del usuario
     if (texto !== "START_FLOW") {
         estado.respuestas.push(texto);
     }
 
-    // Control de cambios de fase
     if (estado.fase === 'intro' && estado.paso >= preguntas.intro.length) {
         estado.fase = 'especificas';
         estado.perfil = calcularPerfil(estado.respuestas);
@@ -79,7 +99,6 @@ app.post('/mensaje', (req, res) => {
         estado.fase = 'final';
     }
 
-    // Envío de preguntas según la fase
     if (estado.fase === 'intro') {
         const p = preguntas.intro[estado.paso];
         estado.paso++;
@@ -102,22 +121,16 @@ app.post('/mensaje', (req, res) => {
         });
 
     } else if (estado.fase === 'final') {
-        // --- AQUÍ GUARDAMOS EN LA BASE DE DATOS ---
         const perfilFinal = estado.perfil;
-        const todasLasRespuestas = JSON.stringify(estado.respuestas); // Convertimos el array a texto
+        const todasLasRespuestas = JSON.stringify(estado.respuestas);
 
         db.run(`INSERT INTO historial (perfil, respuestas) VALUES (?, ?)`, 
             [perfilFinal, todasLasRespuestas], 
             function(err) {
-                if (err) {
-                    console.error("Error al guardar en BD:", err.message);
-                } else {
-                    console.log(`>>> Nuevo test guardado. ID de registro: ${this.lastID}`);
-                }
+                if (err) console.error("Error al guardar en BD:", err.message);
             }
         );
 
-        // Devolvemos el resultado al frontend
         return res.json({
             respuesta: preguntas.mensajes.final,
             recomendaciones: recomendaciones[estado.perfil],
@@ -127,13 +140,11 @@ app.post('/mensaje', (req, res) => {
     }
 });
 
-// 6. RUTA DE REINICIO
 app.get('/reset', (req, res) => {
     estado = { fase: 'intro', paso: 0, respuestas: [], perfil: null, transicionPendiente: false };
     res.json({ ok: true });
 });
 
-// 7. RUTA "SECRETA" PARA VER LOS DATOS GUARDADOS
 app.get('/ver-datos', (req, res) => {
     db.all("SELECT * FROM historial ORDER BY fecha DESC", [], (err, rows) => {
         if (err) return res.status(500).send(err.message);
@@ -141,5 +152,5 @@ app.get('/ver-datos', (req, res) => {
     });
 });
 
-// ARRANQUE DEL SERVIDOR
-app.listen(3000, () => console.log("Servidor EnxarxaTec Online en puerto 3000"));
+// ARRANQUE DINÁMICO
+app.listen(PORT, () => console.log(`Servidor Online en puerto ${PORT}`));

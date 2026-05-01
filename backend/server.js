@@ -159,3 +159,28 @@ app.post('/mensaje', (req, res) => {
         });
     }
 });
+
+// ==========================================
+// 6. RUTAS EXTRA (REINICIO Y VER DATOS)
+// ==========================================
+
+// Ruta para que el frontend reinicie el chat al cargar la página
+app.get('/reset', (req, res) => {
+    estado = { fase: 'intro', paso: 0, respuestas: [], perfil: null, transicionPendiente: false };
+    res.json({ ok: true });
+});
+
+// Ruta para ver los datos guardados en SQLite
+app.get('/ver-datos', (req, res) => {
+    db.all("SELECT * FROM historial ORDER BY fecha DESC", [], (err, rows) => {
+        if (err) return res.status(500).send(err.message);
+        res.json(rows);
+    });
+});
+
+// ==========================================
+// 7. ARRANQUE DEL SERVIDOR (¡LO QUE FALTABA!)
+// ==========================================
+app.listen(PORT, () => {
+    console.log(`Servidor Online y escuchando en puerto ${PORT}`);
+});

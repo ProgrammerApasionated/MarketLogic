@@ -23,15 +23,15 @@
       "opciones": ["No sé qué me gusta", "Tengo miedo a equivocarme", "Falta de formación", "Presión familiar"]
     }
   ],
-  "perfil_tecnico": [
+  "buscador_formacion_activo": [
     {
-      "pregunta": "Te gusta entender cómo funcionan las cosas por dentro. ¿Qué prefieres?",
+      "pregunta": "Te gusta entender cómo funcionan las cosas por dentro y estar al día. ¿Qué área de especialización te atrae más ahora?",
       "opciones": ["Hardware y cacharreo", "Software y código", "Redes y seguridad", "Datos y análisis"]
     }
   ],
-  "perfil_creativo": [
+  "adulto_reinsercion_laboral": [
     {
-      "pregunta": "La creatividad se expresa de muchas formas. ¿Dónde te sientes más cómodo?",
+      "pregunta": "Dada tu experiencia y ganas de aportar, ¿en qué ámbito creativo o de gestión te sientes más cómodo?",
       "opciones": ["Diseño visual", "Escritura o guion", "Video y edición", "Música y sonido"]
     }
   ],

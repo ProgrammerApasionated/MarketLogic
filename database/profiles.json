@@ -1,14 +1,14 @@
 {
   "joven_desorientado": {
     "nombre": "Joven Desorientado",
-    "keywords": ["crear", "manos", "proceso", "aprender", "creativo", "creativa", "creativo/a", "manual", "electrónicamente", "aburrirme", "esperaba"]
+    "keywords": ["crear", "manos", "proceso", "aprender", "creativo", "creativa", "creativo/a", "manual", "electrónicamente", "aburrirme", "esperaba", "arte", "diseño"]
   },
   "buscador_formacion_activo": {
     "nombre": "Buscador de Formación Activo",
-    "keywords": ["leer", "investigar", "resultado", "final", "analítico", "analítica", "analítico/a", "resolver", "problemas", "puzzles", "suficientemente", "bueno", "buena", "bueno/a"]
+    "keywords": ["leer", "investigar", "resultado", "final", "analítico", "analítica", "analítico/a", "resolver", "problemas", "puzzles", "suficientemente", "bueno", "buena", "bueno/a", "tecnología", "código", "técnico"]
   },
   "adulto_reinsercion_laboral": {
     "nombre": "Adulto en Reinserción Laboral",
-    "keywords": ["organizar", "planes", "gente", "ayudar", "otros", "ayuda", "eventos", "encontrar", "trabajo"]
+    "keywords": ["organizar", "planes", "gente", "ayudar", "otros", "ayuda", "eventos", "encontrar", "trabajo", "negocios", "mediador", "estabilidad"]
   }
 }

@@ -17,6 +17,24 @@
       "opciones": ["Oficina dinámica", "Remoto y libre", "Trabajo de campo", "Taller o estudio"]
     }
   ],
+  "joven_desorientado": [
+    {
+      "pregunta": "A veces lo más difícil es dar el primer paso. ¿Qué es lo que más te frena ahora mismo al pensar en tu futuro?",
+      "opciones": ["No sé qué me gusta", "Tengo miedo a equivocarme", "Falta de formación", "Presión familiar"]
+    }
+  ],
+  "perfil_tecnico": [
+    {
+      "pregunta": "Te gusta entender cómo funcionan las cosas por dentro. ¿Qué prefieres?",
+      "opciones": ["Hardware y cacharreo", "Software y código", "Redes y seguridad", "Datos y análisis"]
+    }
+  ],
+  "perfil_creativo": [
+    {
+      "pregunta": "La creatividad se expresa de muchas formas. ¿Dónde te sientes más cómodo?",
+      "opciones": ["Diseño visual", "Escritura o guion", "Video y edición", "Música y sonido"]
+    }
+  ],
   "cierre": [
     {
       "pregunta": "El mundo laboral cambia a la velocidad de la luz. Pensando en tu futuro profesional a largo plazo, ¿qué te entusiasma más: profundizar hasta convertirte en el mayor experto/a en un tema muy específico, o ser un perfil 'todoterreno' capaz de conectar diferentes mundos y aprender cosas nuevas constantemente?",

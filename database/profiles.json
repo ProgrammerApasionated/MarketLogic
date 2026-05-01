@@ -1,54 +1,14 @@
 {
   "joven_desorientado": {
-    "keywords":  [
-      "primer empleo",
-      "desorientación vocacional",
-      "autodescubrimiento",
-      "juventud",
-      "inmediatez digital",
-      "videojuegos",
-      "redes sociales"
-    ],
-    "descripcion": "Joven que busca insertarse en el mercado laboral o definir su futuro formativo, pero no tiene claro su camino profesional. Se siente perdido cuando se le exige saber qué quiere antes de inscribirse en un programa y necesita una orientación vocacional inicial ágil, digital y motivadora.",
-    "actividades": [
-      "Búsqueda inicial de empleo o estudios",
-      "Uso intensivo de dispositivos móviles y redes sociales",
-      "Exploración superficial de opciones formativas sin decidirse"
-    ]
+    "nombre": "Joven Desorientado",
+    "keywords": ["crear", "manos", "proceso", "aprender", "creativo", "creativa", "creativo/a", "manual", "electrónicamente", "aburrirme", "esperaba"]
   },
-
   "buscador_formacion_activo": {
-    "keywords": [
-      "formación online",
-      "sobresaturación",
-      "recomendación personalizada",
-      "upskilling",
-      "empleabilidad",
-      "catálogo de cursos"
-    ],
-    "descripcion": "Usuario con iniciativa para mejorar sus competencias mediante formación online, pero que se siente abrumado por la cantidad de cursos disponibles. Necesita guía clara, recomendaciones personalizadas y conexión entre formación e inserción laboral real.",
-    "actividades": [
-      "Navegación por catálogos de cursos",
-      "Lectura de temarios",
-      "Evaluación de salidas profesionales",
-      "Intento de mejora del currículum"
-    ]
+    "nombre": "Buscador de Formación Activo",
+    "keywords": ["leer", "investigar", "resultado", "final", "analítico", "analítica", "analítico/a", "resolver", "problemas", "puzzles", "suficientemente", "bueno", "buena", "bueno/a"]
   },
-
   "adulto_reinsercion_laboral": {
-    "keywords": [
-      "reincorporación laboral",
-      "brecha digital",
-      "lentitud burocrática",
-      "actualización de competencias",
-      "intermediación local",
-      "cita previa"
-    ],
-    "descripcion": "Adulto de entre 45 y 60 años que busca reincorporarse al mercado laboral. Posee experiencia, pero sufre la lentitud de los procesos y necesita actualizar competencias digitales. Busca conexión directa con empresas locales y procesos más ágiles.",
-    "actividades": [
-      "Solicitud de citas previas en servicios de empleo",
-      "Asistencia a entrevistas presenciales de diagnóstico",
-      "Búsqueda de ofertas adaptadas a su perfil senior"
-    ]
+    "nombre": "Adulto en Reinserción Laboral",
+    "keywords": ["organizar", "planes", "gente", "ayudar", "otros", "ayuda", "eventos", "encontrar", "trabajo"]
   }
 }

@@ -194,5 +194,12 @@ body {
   border-radius: 10px;
   width: fit-content;
   max-width: 90%;
-  margin-left: auto; /* 👈 Alinea a la derecha */
+  margin-left: auto; 
 }
+.opt-btn { display: block; 
+  margin: 5px 20px; 
+  padding: 8px; 
+  border-radius: 5px; 
+  border: 1px solid #007bff; 
+  background: white; color: #007bff; 
+  cursor: pointer; }

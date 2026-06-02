@@ -1,0 +1,84 @@
+# ----------------------------------------
+# Node.js
+# ----------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Logs
+logs/
+*.log
+*.log.*
+log/
+debug.log
+error.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv environment variables
+.env
+.env.local
+.env.*.local
+
+# Coverage
+coverage/
+*.lcov
+
+# Build output
+dist/
+build/
+.cache/
+.tmp/
+
+# Editor folders
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# ----------------------------------------
+# Transformers / ONNX models (MUY IMPORTANTE)
+# ----------------------------------------
+**/.cache/
+**/cache/
+**/models/
+**/model/
+**/*.onnx
+**/*.bin
+**/*.safetensors
+
+# Evitar modelos descargados por @xenova/transformers
+node_modules/@xenova/transformers/.cache/
+node_modules/@xenova/transformers/models/
+
+# ----------------------------------------
+# SQLite database
+# ----------------------------------------
+*.sqlite
+*.sqlite-journal
+*.db
+*.db-journal
+
+# ----------------------------------------
+# Frontend build
+# ----------------------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.cache/
+
+# ----------------------------------------
+# Misc
+# ----------------------------------------
+*.swp
+*.swo
+*.bak
+*.tmp

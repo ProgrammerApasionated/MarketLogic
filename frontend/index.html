@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>MarketLogic – Tu camino profesional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="header">
-  <img src="logo.png" alt="MarketLogic Logo" class="logo">
   <p class="frase-motivadora">Tu camino profesional.</p>
-</header>
+  
+  <div class="lang-selector">
+    <button id="btn-es" class="btn-lang activo" type="button">ES</button>
+    <button id="btn-en" class="btn-lang" type="button">EN</button>
+    <button id="btn-va" class="btn-lang" type="button">VA</button>
+  </div>
+  </header>
 
-<img src="icono.png" alt="MarketLogic Icon" class="logo-secundario">
+<img src="logo_nuevo.png" alt="MarketLogic Icon" class="logo-secundario">
 <main class="chat-container">
   <div id="messages" class="messages"></div>
 
   <div class="input-area">
     <textarea id="input" placeholder="Escribe aquí tu respuesta..."></textarea>
-    <div class="button-group">
-      <button id="presentacion" class="btn btn-secondary" type="button">Presentación</button>
+    <div class="button-row">
+      <button id="btn-tema" class="btn btn-secondary" type="button">Cambiar Tema</button>
       <button id="btn" class="btn btn-primary" type="button">Enviar</button>
     </div>
   </div>

@@ -1,24 +1,70 @@
-/* VARIABLES */
+/* VARIABLES – PALETA NUEVA (Modo Claro Mejorado) */
 :root {
-  --primary-blue: #4A90E2;
-  --primary-hover: #357ABD;
-  --dark-gray: #2A2E35;
-  --text-gray: #6B7280;
-  --border-gray: #D1D5DB;
-  --bg-color: #F9FAFB;
-  --white: #FFFFFF;
+  --primary-blue: #90B1C4;      /* Azul claro principal del PDF */
+  --primary-hover: #9AA8B5;     /* Gris azulado medio del PDF para el hover/bordes */
+  --bg-color: #DCE3EA;          /* Fondo azul/gris muy claro del PDF */
+  
+  --accent-green: #10B981;      /* (Mantenido para etiquetas de éxito) */
+  --accent-yellow: #FBBF24;     /* (Mantenido para advertencias) */
+  
+  /* Ajustes de contraste para que el texto se lea bien sobre el nuevo fondo #DCE3EA */
+  --dark-gray: #1A202C;         /* Texto principal muy oscuro */
+  --text-gray: #4A5568;         /* Texto secundario */
+  --border-gray: #9AA8B5;       /* Usamos el gris medio del PDF para bordes */
+  --white: #FFFFFF;             /* Blanco puro para el interior del chat/cajas */
 }
+
+/* TIPOGRAFÍA GLOBAL */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3,
+.final-card-title,
+.btn,
+.header,
+.frase-motivadora {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.bot-message,
+.user-message,
+.final-list,
+.final-card-subtitle,
+.final-next-step {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.btn-primary,
+.btn-secondary {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.frase-motivadora {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.2px;
+}
+
+/* MAIN */
 main {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* GLOBAL */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', system-ui, sans-serif;
   background-color: var(--bg-color);
+  background-image: none !important;
   color: var(--dark-gray);
   display: flex;
   flex-direction: column;
@@ -28,81 +74,91 @@ body {
 /* HEADER */
 .header {
   text-align: center;
-  padding-top: 0;
-  background-color: var(--white);
+  padding: 15px 20px 0 20px; /* Añadido espacio para proteger los laterales */
+  background-color: var(--bg-color);
+  position: relative;        /* CLAVE: Permite posicionar los idiomas de forma absoluta */
 }
+
+/* ==================================================== */
+/* NUEVO: ESTILOS DEL SELECTOR DE IDIOMAS (TOP RIGHT)   */
+/* ==================================================== */
+/* Contenedor principal (El óvalo blanco exterior de image_9bc71b.png) */
+.lang-selector {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  display: flex;
+  gap: 4px;
+  background-color: var(--white);
+  border: 1px solid var(--border-gray);
+  padding: 3px;
+  border-radius: 999px; /* Consigue la forma de cápsula perfecta */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Botones de idioma individuales */
+.btn-lang {
+  background: none;
+  border: none;
+  color: var(--text-gray);
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px; /* Hace que el fondo azul también sea un óvalo perfecto */
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.6;
+}
+
+/* El botón sobre el que pasas el ratón */
+.btn-lang:hover {
+  opacity: 1;
+}
+
+.btn-lang:active {
+  transform: scale(0.9); /* Se encoge sutilmente simulando un botón físico */
+}
+
+.btn-lang.activo {
+  background-color: var(--primary-blue); /* Usa tu azul suave del claro o cian del oscuro */
+  color: var(--white) !important;       /* Fuerza el texto a blanco puro */
+  opacity: 1;
+}
+/* ==================================================== */
 
 .logo {
   height: 70px;
   margin-bottom: 10px;
 }
+
 .logo-secundario {
-    width: 200px;
-    display: block;
-    margin: 10px auto 10px auto;
-    opacity: 0.95;
+  width: 500px;
+  display: block;
+  margin: 10px auto;
+  opacity: 0.95;
 }
+
 /* FRASE */
 .frase-motivadora {
   font-size: 1.2rem;
   color: var(--text-gray);
-  font-weight: 400;
   margin: 10px 0 20px;
-  font-style: italic;
 }
+
 /* MENSAJES */
 .messages {
   width: 100%;
   max-width: 600px;
-  min-height: 200px;   /* 👈 ESTO ES LO QUE FALTABA */
-  padding: 10px;
+  min-height: 400px;
+  padding: 20px;
   box-sizing: border-box;
-  overflow-y: auto;     /* 👈 Permite scroll si hay muchos mensajes */
-}
-
-/* ÁREA DE INPUT */
-.input-area {
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;     /* centra el textarea y el botón */
-  width: 100%;
-  max-width: 500px;
-  gap: 20px;
+  gap: 12px;
 }
 
-/* CAJA DE TEXTO (limpia, sin bordes fuertes) */
-#input {
-  
-  width: 100%;
-  min-height: 110px;
-  padding: 16px 20px;
-  font-size: 1rem;
-  border-radius: 14px;
-  border: none;                     /* SIN LÍNEAS */
-  background-color: var(--white);
-  box-shadow: 0 4px 18px rgba(0,0,0,0.06); /* sombra suave */
-  resize: none;
-  box-sizing: border-box;
-}
-
-/* BOTÓN ENVIAR (pequeño, centrado) */
-#btn {
-  background-color: var(--primary-blue);
-  color: var(--white);
-  border: none;
-  padding: 10px 26px;       /* más pequeño */
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.2s ease;
-  align-self: center;       /* centrado */
-}
-
-#btn:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-1px);
-}
 /* CONTENEDOR DEL CHAT */
 .chat-container {
   flex: 1;
@@ -129,11 +185,36 @@ body {
   padding: 16px 20px;
   font-size: 1rem;
   border-radius: 14px;
-  border: none;
+  border: 1px solid var(--border-gray);
   background-color: var(--white);
+  color: var(--dark-gray);
   box-shadow: 0 4px 18px rgba(0,0,0,0.06);
   resize: none;
   box-sizing: border-box;
+}
+
+#input::placeholder {
+  color: var(--text-gray);
+  opacity: 0.7;
+}
+
+/* BOTÓN ENVIAR (ID) */
+#btn {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 10px 26px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  align-self: center;
+}
+
+#btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
 }
 
 /* CONTENEDOR DE BOTONES */
@@ -148,25 +229,24 @@ body {
 .btn {
   padding: 10px 24px;
   font-size: 0.95rem;
-  font-weight: 600;
   border-radius: 999px;
   cursor: pointer;
   transition: 0.2s ease;
   font-family: inherit;
 }
 
-/* BOTÓN GRIS: PRESENTACIÓN */
+/* BOTÓN GRIS: SECUNDARIO */
 .btn-secondary {
-  background-color: #E5E7EB;
-  color: #4B5563;
-  border: 1px solid #D1D5DB;
+  background-color: var(--white);
+  color: var(--text-gray);
+  border: 1px solid var(--border-gray);
 }
 
 .btn-secondary:hover {
-  background-color: #D1D5DB;
+  background-color: var(--border-gray);
 }
 
-/* BOTÓN AZUL: ENVIAR */
+/* BOTÓN AZUL: PRINCIPAL */
 .btn-primary {
   background-color: var(--primary-blue);
   color: var(--white);
@@ -176,30 +256,122 @@ body {
 .btn-primary:hover {
   background-color: var(--primary-hover);
 }
+
+/* MENSAJES DEL BOT */
 .bot-message {
-  background: #E5E7EB;
-  padding: 10px 14px;
-  margin: 10px 0;
-  border-radius: 10px;
-  color: #111;
+  align-self: flex-start;
+  background: var(--white);
+  color: var(--dark-gray);
+  border: 1px solid var(--border-gray);
+  padding: 12px 16px;
+  border-radius: 14px 14px 14px 0;
   width: fit-content;
-  max-width: 90%;
+  max-width: 85%;
+  font-size: 14.5px;
+  line-height: 1.5;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
+/* MENSAJES DEL USUARIO */
 .user-message {
-  background: #4A90E2;
-  color: white;
-  padding: 10px 14px;
-  margin: 10px 0;
-  border-radius: 10px;
+  align-self: flex-end;
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 12px 16px;
+  border-radius: 14px 14px 0 14px;
   width: fit-content;
-  max-width: 90%;
-  margin-left: auto; 
+  max-width: 80%;
+  font-size: 14.5px;
+  line-height: 1.5;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
-.opt-btn { display: block; 
-  margin: 5px 20px; 
-  padding: 8px; 
-  border-radius: 5px; 
-  border: 1px solid #007bff; 
-  background: white; color: #007bff; 
-  cursor: pointer; }
+
+/* BOTONES DE OPCIÓN EN MENSAJES */
+.opt-btn {
+  display: block;
+  margin: 5px 20px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-blue);
+  background: var(--white);
+  color: var(--primary-blue);
+  cursor: pointer;
+}
+
+/* TARJETA FINAL */
+.final-card {
+  background: var(--white);
+  border: 1px solid var(--border-gray);
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+  max-width: 600px;
+}
+
+.final-card-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.final-card-title {
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--primary-blue);
+}
+
+.final-card-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  margin-top: 4px;
+}
+
+.final-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark-gray);
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+.final-list {
+  list-style-type: none !important; /* Elimina el punto */
+  padding-left: 0 !important;       /* Elimina el espacio a la izquierda */
+  margin: 0 !important;
+}
+
+.final-list li {
+  list-style-type: none !important; /* Asegura que los items no tengan punto */
+  padding-left: 0 !important;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.final-separator {
+  border: none;
+  border-top: 1px solid var(--border-gray);
+  margin: 18px 0;
+}
+
+.final-next-step {
+  font-style: italic;
+  color: var(--primary-blue);
+  margin-top: 10px;
+}
+
+/* CUANDO EL BODY TIENE LA CLASE 'tema-oscuro', ESTAS VARIABLES REEMPLAZAN A LAS CLARAS */
+body.tema-oscuro {
+  --bg-color: #000000;          /* Negro profundo para absorber la luz */
+  --white: #0B1021;             /* Azul medianoche súper oscuro para el fondo de las cajas/inputs */
+  
+  --primary-blue: #08F7FE;      /* Cian eléctrico puro */
+  --primary-hover: #09FBD3;     /* Verde neón puro para el hover */
+  
+  --dark-gray: #FFFFFF;         /* El texto principal pasa a ser blanco puro */
+  --text-gray: #A0AEC0;         /* Texto secundario en gris claro */
+  --border-gray: #1A3644;       /* Bordes con un toque sutil de cian oscuro */
+}
+
+/* Transición suave para que el cambio no sea brusco (Añadido .btn-lang y .lang-selector) */
+body, #input, .bot-message, .user-message, .btn, .btn-lang, .lang-selector {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

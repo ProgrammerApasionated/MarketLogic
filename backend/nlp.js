@@ -12,9 +12,8 @@ const LOCALES = {
       tecnica: "la tecnología, la ingeniería y el análisis lógico",
       creatividad: "las artes visuales, la conceptualización y el diseño de experiencias",
       social: "el desarrollo humano, la salud y la transformación social",
-      estabilidad: "la arquitectura de negocios, las finanzas y la gestión estratégica"
+      stabilidad: "la arquitectura de negocios, las finanzas y la gestión estratégica"
     },
-    // 🔥 NUEVO: Títulos profesionales reales y de alto nivel
     profesiones: {
       tecnica: ["Ingeniero/a de Software", "Arquitecto/a de Datos", "Especialista en Inteligencia Artificial", "Ingeniero/a Cloud", "Desarrollador/a Full-Stack"],
       creatividad: ["Diseñador/a de Producto (UX/UI)", "Director/a Creativo/a", "Estratega de Marca", "Diseñador/a de Experiencias Digitales", "Productor/a Audiovisual"],
@@ -29,10 +28,12 @@ const LOCALES = {
     },
     preguntasEtapa2: {
       tecnica: "Perfecto. Para definir la finalidad de tu plan: ¿Prefieres la autonomía técnica de una startup/proyecto independiente (Flexible), o buscas el respaldo metodológico de una gran tecnológica con procesos estructurados (Estructurado)?",
-      creatividad: "Brillante. Última cuestión clave: ¿Te inspira más operar con libertad absoluta como freelance gestionando tus propios clientes (Flexible), o buscas el dinamismo de una agencia corporativa con briefings estables (Estructurado)?",
-      social: "Muy bien definido. Concluyamos: ¿Visualizas tu futuro ejerciendo de manera autónoma montando tu propia consulta o proyecto libre (Flexible), o buscas la seguridad contractual de instituciones consolidadas (Estructurado)?",
-      estabilidad: "Entendido. Para finalizar tu diagnóstico: ¿Tu meta está vinculada a escalar peldaños jerárquicos dentro de una multinacional estable (Estructurado), o prefieres la flexibilidad de operar de forma externa optimizando empresas (Flexible)?"
+      creatividad: "Brillante. Otra cuestión clave: ¿Te inspira más operar con libertad absoluta como freelance gestionando tus propios clientes (Flexible), o buscas el dinamismo de una agencia corporativa con briefings estables (Estructurado)?",
+      social: "Muy bien definido. Continuemos: ¿Visualizas tu futuro ejerciendo de manera autónoma montando tu propia consulta o proyecto libre (Flexible), o buscas la seguridad contractual de instituciones consolidadas (Estructurado)?",
+      estabilidad: "Entendido. Para acotar tu entorno: ¿Tu meta está vinculada a escalar peldaños jerárquicos dentro de una multinacional estable (Estructurado), o prefieres la flexibilidad de operar de forma externa optimizando empresas (Flexible)?"
     },
+
+    preguntasEtapa3: "Entendido. Para finalizar y diseñar tu plan de formación ideal: ¿Cómo prefieres adquirir nuevas habilidades: de manera autodidacta investigando por tu cuenta y con documentación oficial, o mediante un enfoque guiado con mentores, bootcamps o certificaciones estructuradas?",
     cierre: "¡Perfecto! Hemos consolidado tu perfil de manera exitosa. Tu matriz estratégica de carrera ha sido fijada. A continuación se despliega tu plan de acción maestro y hoja de ruta de mercado:",
     reporte: {
       flexible: {
@@ -82,10 +83,11 @@ const LOCALES = {
     },
     preguntasEtapa2: {
       tecnica: "Great. To define your action plan: Do you prefer the technical autonomy of a startup or independent project (Flexible), or do you look for the structured processes of a tech giant (Structured)?",
-      creatividad: "Brilliant. Last key question: Does working with absolute freedom as a freelance designer tracking your own clients inspire you (Flexible), or do you prefer corporate agencies with stable project briefings (Structured)?",
-      social: "Well defined. Let's wrap up: Do you see your future running your own independent practice or consulting project (Flexible), or do you prefer the long-term job security of consolidated institutions (Structured)?",
+      creatividad: "Brilliant. Another key question: Does working with absolute freedom as a freelance designer tracking your own clients inspire you (Flexible), or do you prefer corporate agencies with stable project briefings (Structured)?",
+      social: "Well defined. Let's keep going: Do you see your future running your own independent practice or consulting project (Flexible), or do you prefer the long-term job security of consolidated institutions (Structured)?",
       estabilidad: "Understood. To finalize your diagnostic: Is your career goal tied to climbing corporate ladders in a stable multinational (Structured), or do you prefer the flexibility of external corporate consulting (Flexible)?"
     },
+    preguntasEtapa3: "Understood. To finalize and design your ideal training plan: How do you prefer to acquire new skills: in a self-taught manner researching on your own with official documentation, or through a guided approach with mentors, bootcamps, or structured certifications?",
     cierre: "Perfect! We have successfully consolidated your profile. Your career strategic matrix is set. Below is your master action plan and market roadmap:",
     reporte: {
       flexible: {
@@ -130,28 +132,29 @@ const LOCALES = {
     preguntasEtapa1: {
       tecnica: "Entès perfectament. Per a aprofundir: Quin tipus de desafiaments et desperten major curiositat intel·lectual: el disseny lògic i desenvolupament de sistemes informàtics des de zero, o l'analítica profunda de dades?",
       creatividad: "Excel·lent diagnòstic. Conta'm: Què t'apassiona més en la pràctica: la creació de la identitat estètica d'una marca, o l'arquitectura de l'experiència d'usuari (UX/UI)?",
-      social: "Un perfil molt clar i valuós. Digues-me: En quin entorn sents que generaries major impacte: intervenint en el benestar de les persones de forma personalitzada, o liderant processos de docència?",
+      social: "Un perfil molt clar i valuós. Digues-me: En quin entorn sents que generaries major impacte: intervenint en el benestar de l'estructura organitzacional, o liderant processos de docència?",
       estabilidad: "Magnífic. Anem a acotar: Quina àrea de governança corporativa t'atreu més: el control analític i financer, o la direcció operativa de projectes complexos?"
     },
     preguntasEtapa2: {
       tecnica: "Perfecte. Per a definir la finalitat del teu pla: Prefereixes l'autonomia tècnica d'una startup o projecte independent (Flexible), o busques el rodatge d'una gran tecnològica amb processos estructurats (Estructurat)?",
-      creatividad: "Brillant. Última qüestió clau: T'inspira més operar amb llibertat absoluta com a freelance gestionant els teus propis clients (Flexible), o busques el dinamisme d'una agència amb briefings estables (Estructurat)?",
-      social: "Molt bé definit. Concloem: Visualitzes el teu futur exercint de manera autònoma amb la teua pròpia consulta o projecte lliure (Flexible), o busques la seguretat contractual d'institucions consolidades (Estructurat)?",
-      estabilidad: "Entès. Per a finalitzar el teu diagnòstic: La teua meta està vinculada a escalar esglaons jeràrquics dins d'una multinacional estable (Estructurat), o prefereixes la flexibilitat d'operar de forma externa (Flexible)?"
+      creatividad: "Brillant. Altra qüestió clau: T'inspira més operar amb llibertat absoluta com a freelance gestionant els teus propis clients (Flexible), o busques el dinamisme d'una agència amb briefings estables (Estructurat)?",
+      social: "Molt bé definit. Continuem: Visualitzes el teu futur exercint de manera autònoma amb la teua pròpia consulta o projecte lliure (Flexible), o busques la seguretat contractual d'institucions consolides (Estructurat)?",
+      estabilidad: "Entès. Per a acotar el teu entorn: La teua meta està vinculada a escalar esglaons jeràrquics dins d'una multinacional estable (Estructurat), o prefereixes la flexibilitat d'operar de forma externa (Flexible)?"
     },
+    preguntasEtapa3: "Entès. Per a finalitzar i dissenyar el teu pla de formació ideal: Com prefereixes adquirir noves habilitats: de manera autodidacta investigant pel teu compte i amb documentació oficial, o mitjançant un enfocament guiat amb mentors, bootcamps o certificacions estructurades?",
     cierre: "Perfecte! Hem consolidat el teu perfil de manera exitosa. La teua matriu estratègica de carrera ha sigut fixada. A continuació es desplega el teu pla d'acció mestre i full de ruta de mercat:",
     reporte: {
       flexible: {
         valores: ["Autonomia Estratègica", "Gestió per Resultats", "Mitigació de Riscos"],
         detalle: "El teu perfil requereix un model operatiu dinàmic. Treballes millor sota metodologies asíncrones, prioritzant el valor lliurat per damunt de les barreres jeràrquiques.",
-        empresas: ["Plataformes globals de consultoria premium (Toptal, Upwork)", "Startups tecnològiques amb arquitectures de treball 100% distribuïdes", "Estudis boutique d'innovació basats en projectes líquids"],
+        empresas: ["Plataformes globals de consultoría premium (Toptal, Upwork)", "Startups tecnològiques amb arquitectures de treball 100% distribuïdes", "Estudis boutique d'innovació basats en projectes líquids"],
         estrategia: "El teu actiu més valuós és el teu portafoli analitzable (Proof of Work). El mercat lliure premium no compra títols, compra solucions directes sense cost d'onboarding.",
         plan: ["Dissenya i publica un cas d'estudi real interactiu que expose un problema complex resolt.", "Desenvolupa una matriu de preus basada en valor en lloc de tarifes horàries."]
       },
       estructurado: {
         valores: ["Governança Corporativa", "Seguretat Estructural", "Escalabilitat Organitzacional"],
         detalle: "Maximitzes el teu potencial dins d'organitzacions estables amb fluxos jeràrquics clars, plans de carrera predictibles i polítiques que mitiguen el caos operatiu.",
-        empresas: ["Multinacionals Fortune 500 líders del sector", "Firmes globals de consultoria estratègica (Big Four)", "Institucions bancàries internacionals o departaments consolidats"],
+        empresas: ["Multinacionals Fortune 500 líders del sector", "Firmas globals de consultoria estratègica (Big Four)", "Institucions bancàries internacionals o departaments consolidats"],
         estrategia: "El teu èxit dependrà de la teua capacitat per a navegar la política organitzacional i el control de stakeholders. Alinea els teus KPIs individuals amb les metes macro de la direcció.",
         plan: ["Audita perfils directius en LinkedIn dins del teu sector i identifica les seues certificacions comunes.", "Optimitza el teu currículum adaptant-lo específicament per a superar els sistemes de filtrat automàtics (ATS)."]
       },
@@ -163,7 +166,7 @@ const LOCALES = {
       guiado: {
         valores: ["Aprenentatge Mentoritzat"],
         plan: ["Busca activament un mentor sènior en el teu sector que proveïsca feedback crític immediat.", "Inverteix en acreditacions oficials reconegudes per a accelerar la validació en comités."],
-        formacion: "Programes de postgrau acreditats, Bootcamps d'alt rendiment i certificacions oficials."
+        formacion: "Programas de postgrau acreditats, Bootcamps d'alt rendiment i certificacions oficials."
       }
     }
   }
@@ -176,21 +179,15 @@ async function cargarModelos() {
 // ==========================================
 // 2. DETECCIÓN AVANZADA: SISTEMA DE PUNTUACIÓN (NLP MEJORADO)
 // ==========================================
-
 function detectarCategoriaPorPuntuacion(texto) {
   const t = texto.toLowerCase();
 
-  // --- 1. PRIORIDAD ABSOLUTA (Sin banderas 'g' y con patrones flexibles) ---
-  // He eliminado las \b y los patrones demasiado específicos para evitar que fallen con palabras derivadas
   if (/software|program|código|desarroll|python|java|backend|frontend|ia|algoritmo|script|binario|devops/.test(t)) return "tecnica";
   if (/diseñ|arte|creativ|ux|ui|figma|branding|ilustr|visual|audiovisual|estétic|foto|edición/.test(t)) return "creatividad";
   if (/personas|ayudar|empat|enseñ|docencia|psicolog|salud|cuidado|rrhh|terapia|coaching|ong|comunidad/.test(t)) return "social";
   if (/financ|econom|inversión|banca|auditoría|ley|normativa|presupuesto|contabil/.test(t)) return "estabilidad";
 
-  // --- 2. SISTEMA DE PESOS (Si no hay match directo) ---
   const scores = { tecnica: 0, creatividad: 0, social: 0, estabilidad: 0 };
-
-  // Usamos .includes() que es mucho más seguro y rápido que Regex para puntuaciones
   const keywords = {
     tecnica: ["tecnolog", "sistem", "datos", "web", "cloud"],
     creatividad: ["concepto", "idea", "tendencia", "estilo"],
@@ -204,72 +201,28 @@ function detectarCategoriaPorPuntuacion(texto) {
     });
   }
 
-  // --- 3. DECISIÓN FINAL ---
   let bestCat = null;
   let maxScore = 0;
-  
   for (const [cat, score] of Object.entries(scores)) {
     if (score > maxScore) { 
       maxScore = score; 
       bestCat = cat; 
     }
   }
-  
-  // Si no hay puntos en nada, devolvemos null, no forzamos 'estabilidad' aquí
-  // Dejamos que la función principal maneje el fallback si es necesario
   return bestCat; 
 }
 
+// ==========================================
+// 3. PROCESADOR DE RESPUESTAS POR ETAPA (UNIFICADO)
+// ==========================================
 async function analizarRespuesta(texto, historial, etapaActual) {
   const t = (texto || "").toLowerCase().trim();
 
-  // Si son botones, saltamos el NLP
-  if ((etapaActual === 1 || etapaActual === 2) && ["tecnica", "creatividad", "social", "estabilidad"].includes(t)) {
-    historial.categoriaPrincipal = t;
-    historial.respuestasVocacionales.push(texto);
-    return { categoria: t };
-  }
-
-  // Etapa 1 o 2 (NLP)
-  if (etapaActual === 1 || etapaActual === 2) {
-    historial.respuestasVocacionales.push(texto);
-    
-    let cat = detectarCategoriaPorPuntuacion(t);
-    
-    // FALLBACK: Si no detectamos nada, mantenemos la anterior o por defecto estabilidad
-    if (!cat) {
-        cat = historial.categoriaPrincipal || "estabilidad";
-    }
-    
-    historial.categoriaPrincipal = cat;
-    
-    // Asignación de aprendizaje automático
-    const perfilAprendizaje = { tecnica: "autodidacta", creatividad: "autodidacta", social: "guiado", estabilidad: "guiado" };
-    historial.modificadorAprendizaje = perfilAprendizaje[cat] || "guiado";
-    
-    return { categoria: cat };
-  }
-
-  // Etapa 3 (Entorno) - Igual que antes
-  if (etapaActual === 3) {
-    historial.respuestasModificadores.push(texto);
-    const isFlexible = /flexib|libre|libertad|independiente|freelance|remoto|propia|autonom|startup/.test(t);
-    historial.modificadorEntorno = isFlexible ? "flexible" : "estructurado";
-    return { categoria: historial.categoriaPrincipal };
-  }
-
-  return { categoria: historial.categoriaPrincipal || "estabilidad" };
-}
-
-async function analizarRespuesta(texto, historial, etapaActual) {
-  const t = (texto || "").toLowerCase().trim();
-
-  // Inicialización segura del historial
   if (!historial.idioma) historial.idioma = "es"; 
   if (!historial.respuestasVocacionales) historial.respuestasVocacionales = [];
   if (!historial.respuestasModificadores) historial.respuestasModificadores = [];
 
-  // --- DETECCIÓN DIRECTA POR BOTONES ---
+  // --- DETECCIÓN DIRECTA POR CLIC EN BOTONES DE INTERFAZ ---
   if (etapaActual === 1 || etapaActual === 2) {
     if (["tecnica", "creatividad", "social", "estabilidad"].includes(t)) {
       historial.categoriaPrincipal = t;
@@ -284,29 +237,29 @@ async function analizarRespuesta(texto, historial, etapaActual) {
       return { categoria: historial.categoriaPrincipal };
     }
   }
+  if (etapaActual === 4) {
+    if (["autodidacta", "guiado"].includes(t)) {
+      historial.modificadorAprendizaje = t;
+      return { categoria: historial.categoriaPrincipal };
+    }
+  }
 
-  // --- ANÁLISIS DE TEXTO LIBRE ---
+  // --- ANÁLISIS POR PROCESAMIENTO DE TEXTO LIBRE (NLP) ---
   if (etapaActual === 1) {
     historial.respuestasVocacionales.push(texto);
     const categoriaDetectada = detectarCategoriaPorPuntuacion(t);
-    historial.categoriaPrincipal = categoriaDetectada || "estabilidad"; // Estabilidad como fallback general
+    historial.categoriaPrincipal = categoriaDetectada || "estabilidad"; 
     return { categoria: historial.categoriaPrincipal };
   }
 
   if (etapaActual === 2) {
     historial.respuestasVocacionales.push(texto);
-    
-    // Si en la segunda respuesta hay un cambio de intención drástico, lo capturamos
     const categoriaDetectada = detectarCategoriaPorPuntuacion(t);
     const intencionCambio = /\b(quiero cambiar|prefiero|mejor quiero|en realidad|pensándolo bien)\b/gi;
     
     if (categoriaDetectada && intencionCambio.test(t)) {
       historial.categoriaPrincipal = categoriaDetectada;
     }
-
-    // Definición del modificador de aprendizaje
-    const perfilAprendizaje = { tecnica: "autodidacta", creatividad: "autodidacta", social: "guiado", estabilidad: "guiado" };
-    historial.modificadorAprendizaje = perfilAprendizaje[historial.categoriaPrincipal] || "guiado";
     return { categoria: historial.categoriaPrincipal };
   }
 
@@ -320,18 +273,26 @@ async function analizarRespuesta(texto, historial, etapaActual) {
     return { categoria: historial.categoriaPrincipal };
   }
 
+  if (etapaActual === 4) {
+    if (/\b(autodidacta|solo|mismo|cuenta|libre|documentacion|internet|open|investig)\b/gi.test(t)) {
+      historial.modificadorAprendizaje = "autodidacta";
+    } else {
+      historial.modificadorAprendizaje = "guiado";
+    }
+    return { categoria: historial.categoriaPrincipal };
+  }
+
   return { categoria: historial.categoriaPrincipal };
 }
 
 // ==========================================
-// 3. INFORME TRADUCIDO DINÁMICAMENTE (SIN VIÑETAS)
+// 4. INFORME TRADUCIDO DINÁMICAMENTE (SIN VIÑETAS)
 // ==========================================
 async function elegirPerfilPorNLP(historial) {
   const lang = historial.idioma || "es";
   const TEXTS = LOCALES[lang] || LOCALES["es"];
 
   const categoriaFiltro = historial.categoriaPrincipal || "estabilidad";
-  
   const profesionesDisponibles = TEXTS.profesiones[categoriaFiltro];
   const textoTotalLength = (historial.respuestasVocacionales || []).join("").length;
   const index = textoTotalLength % profesionesDisponibles.length;
@@ -341,34 +302,20 @@ async function elegirPerfilPorNLP(historial) {
   perfilFinal.name = nombreProfesionReal;
   
   const entorno = historial.modificadorEntorno || "estructurado";
-  const aprendizaje = historial.modificadorAprendizaje || "guiado";
+  const aprendizaje = historial.modificadorAprendizaje || "guiado"; // ¡Ahora es dinámico!
 
-  // ⚡ CAMBIO AQUÍ: Convertimos los arrays en texto plano usando .join()
-  // Esto hará que el frontend ya no pueda renderizarlos como listas de viñetas.
-  
-  // valoresClave ahora es una cadena separada por comas
   perfilFinal.valoresClave = [...TEXTS.reporte[entorno].valores, ...TEXTS.reporte[aprendizaje].valores].join(", ");
-  
-  // detalle se mantiene como string
   perfilFinal.entornoRecomendadoDetalle = TEXTS.reporte[entorno].detalle;
-  
-  // empresas ahora es una cadena separada por barras verticales
   perfilFinal.empresas = TEXTS.reporte[entorno].empresas.join(" | ");
-  
-  // estrategia se mantiene como string
   perfilFinal.estrategiaMercado = TEXTS.reporte[entorno].estrategia;
-  
-  // planAccionInmediato ahora es una cadena separada por puntos y coma
   perfilFinal.planAccionInmediato = [...TEXTS.reporte[entorno].plan, ...TEXTS.reporte[aprendizaje].plan].join("; ");
-  
-  // formacion se mantiene como string
   perfilFinal.formacionRecomendada = TEXTS.reporte[aprendizaje].formacion;
 
   return { perfilId: "prof_detectada", perfilModificado: perfilFinal };
 }
 
 // ==========================================
-// 4. PREGUNTAS DINÁMICAS
+// 5. PREGUNTAS DINÁMICAS
 // ==========================================
 function generarRespuestaDinamica(analisis, etapaActual, historial) {
   const lang = historial.idioma || "es";
@@ -377,7 +324,8 @@ function generarRespuestaDinamica(analisis, etapaActual, historial) {
 
   if (etapaActual === 1) return TEXTS.preguntasEtapa1[cat];
   if (etapaActual === 2) return TEXTS.preguntasEtapa2[cat];
-  if (etapaActual === 3) return TEXTS.cierre;
+  if (etapaActual === 3) return TEXTS.preguntasEtapa3; // Muestra la pregunta de aprendizaje
+  if (etapaActual === 4) return TEXTS.cierre;
   
   return "";
 }

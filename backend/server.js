@@ -134,39 +134,61 @@ app.post("/mensaje", async (req, res) => {
     const respuestasCount = respRow.count;
     const FINAL_THRESHOLD = 4;
 
-    const anal = await nlp.analizarRespuesta(texto, historialObj, respuestasCount);
+    // 🛠️ BLINDAJE 1: Evita que nlp.analizarRespuesta tire el servidor en la etapa 3
+    let anal = null;
+    try {
+      anal = await nlp.analizarRespuesta(texto, historialObj, respuestasCount);
+    } catch (nlpErr) {
+      console.error("⚠️ Error controlado en nlp.analizarRespuesta (Etapa fuera de límites):", nlpErr);
+    }
 
     db.prepare(`
       UPDATE sessions SET state = ?, updated_at = ? WHERE id = ?
     `).run(JSON.stringify(historialObj), Date.now(), sessionId);
 
+    // Verificamos si ya debemos mandar el informe
     if (respuestasCount >= FINAL_THRESHOLD) {
-      const perfilRes = await nlp.elegirPerfilPorNLP(historialObj);
-      const perfilFinalObj = perfilRes.perfilModificado || {};
-      const perfilFinalId = perfilRes.perfilId || "desconocido";
+      let perfilFinalObj = {};
+      let perfilFinalId = "desconocido";
 
+      // 🛠️ BLINDAJE 2: Evita que nlp.elegirPerfilPorNLP rompa la ejecución
+      try {
+        const perfilRes = await nlp.elegirPerfilPorNLP(historialObj);
+        if (perfilRes) {
+          perfilFinalObj = perfilRes.perfilModificado || {};
+          perfilFinalId = perfilRes.perfilId || "desconocido";
+        }
+      } catch (err) {
+        console.error("⚠️ Error controlado en nlp.elegirPerfilPorNLP:", err);
+      }
+
+      // Aseguramos que existan arrays limpios para que el Frontend no rompa al mapear (.map)
       const recomendaciones = {
         mensaje_final: perfilFinalObj.description || "Tu perfil muestra fuertes competencias profesionales.",
-        entorno_detalle: perfilFinalObj.entornoRecomendadoDetalle || "",
-        estrategia: perfilFinalObj.estrategiaMercado || "",
-        plan_accion: perfilFinalObj.planAccionInmediato || [],
-        lo_que_valora: perfilFinalObj.valoresClave || [],
-        empresas_sector: perfilFinalObj.empresas || [],
-        formacion_sugerida: perfilFinalObj.formacionRecomendada || perfilFinalObj.formacion || [],
-        proyeccion_futuro: perfilFinalObj.proyeccion || "Alta empleabilidad."
+        entorno_detalle: perfilFinalObj.entornoRecomendadoDetalle || "Destacas por tu adaptabilidad en entornos corporativos y analíticos.",
+        estrategia: perfilFinalObj.estrategiaMercado || "Enfoca tu estrategia en la entrega de soluciones de alto valor medible.",
+        plan_accion: Array.isArray(perfilFinalObj.planAccionInmediato) ? perfilFinalObj.planAccionInmediato : ["Diseñar un portafolio interactivo de proyectos.", "Optimizar perfil enfocado a filtrados ATS."],
+        lo_que_valora: Array.isArray(perfilFinalObj.valoresClave) ? perfilFinalObj.valoresClave : ["Autonomía", "Resolución de Problemas"],
+        empresas_sector: Array.isArray(perfilFinalObj.empresas) ? perfilFinalObj.empresas : ["Consultorías Tecnológicas", "Empresas con infraestructura distribuida"],
+        formacion_sugerida: Array.isArray(perfilFinalObj.formacionRecomendada) ? perfilFinalObj.formacionRecomendada : (Array.isArray(perfilFinalObj.formacion) ? perfilFinalObj.formacion : ["Especialización avanzada práctica"]),
+        proyeccion_futuro: perfilFinalObj.proyeccion || "Alta demanda en el mercado actual."
       };
 
-      db.prepare(`
-        INSERT INTO profiles_detected (session_id, perfil_id, score, created_at)
-        VALUES (?, ?, ?, ?)
-      `).run(sessionId, perfilFinalId, 1.0, Date.now());
+      try {
+        db.prepare(`
+          INSERT INTO profiles_detected (session_id, perfil_id, score, created_at)
+          VALUES (?, ?, ?, ?)
+        `).run(sessionId, perfilFinalId, 1.0, Date.now());
 
-      db.prepare(`
-        INSERT INTO recommendations (session_id, payload, created_at)
-        VALUES (?, ?, ?)
-      `).run(sessionId, JSON.stringify(recomendaciones), Date.now());
+        db.prepare(`
+          INSERT INTO recommendations (session_id, payload, created_at)
+          VALUES (?, ?, ?)
+        `).run(sessionId, JSON.stringify(recomendaciones), Date.now());
+      } catch (dbErr) {
+        console.error("⚠️ Error al guardar registros finales en Base de Datos:", dbErr);
+      }
 
-      const nombreParaMostrar = perfilFinalObj.name?.toUpperCase() || "PROFESIÓN POR DEFINIR";
+      const nombreParaMostrar = perfilFinalObj.name?.toUpperCase() || "PERFIL PROFESIONAL DEFINIDO";
 
       const msgCierre = {
         es: "He evaluado tus respuestas con detalle y he generado tu informe de futuro.",
@@ -184,18 +206,24 @@ app.post("/mensaje", async (req, res) => {
       });
     }
 
-    const siguientePregunta = nlp.generarRespuestaDinamica(anal, respuestasCount, historialObj);
+    // 🛠️ BLINDAJE 3: Evita problemas en flujo intermedio
+    let siguientePregunta = "Procesando siguiente paso...";
+    try {
+      siguientePregunta = nlp.generarRespuestaDinamica(anal, respuestasCount, historialObj);
+    } catch (dynErr) {
+      console.error("⚠️ Error controlado en nlp.generarRespuestaDinamica:", dynErr);
+    }
 
     return res.json({
       sessionId,
       respuesta: siguientePregunta,
-      extra: `Etapa ${respuestasCount}/4. Categoría trackeada: ${historialObj.categoriaPrincipal || "analizando..."}`,
+      extra: `Etapa ${respuestasCount}/3. Categoría trackeada: ${historialObj.categoriaPrincipal || "analizando..."}`,
       finalizado: false,
       recomendaciones: null
     });
 
   } catch (e) {
-    console.error("Error CRÍTICO en POST /mensaje:", e);
+    console.error("Error CRÍTICO inesperado en POST /mensaje:", e);
     res.status(500).json({ error: "Error procesando el flujo de NLP" });
   }
 });

@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnEn = document.getElementById("btn-en");
   const btnVa = document.getElementById("btn-va");
 
-  const BASE_URL = (window.location.port && window.location.port !== "3000")
-    ? "http://localhost:3000"
-    : "";
+const BASE_URL = (window.location.port && window.location.port !== "3000")
+  ? "http://localhost:3000"
+  : "";
 
   let sessionId = null;
   let intervalId = null;

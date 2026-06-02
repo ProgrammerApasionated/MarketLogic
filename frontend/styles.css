@@ -7,17 +7,25 @@
   --accent-green: #10B981;      /* (Mantenido para etiquetas de éxito) */
   --accent-yellow: #FBBF24;     /* (Mantenido para advertencias) */
   
-  /* Ajustes de contraste para que el texto se lea bien sobre el nuevo fondo #DCE3EA */
+  /* Ajustes de contraste */
   --dark-gray: #1A202C;         /* Texto principal muy oscuro */
   --text-gray: #4A5568;         /* Texto secundario */
   --border-gray: #9AA8B5;       /* Usamos el gris medio del PDF para bordes */
   --white: #FFFFFF;             /* Blanco puro para el interior del chat/cajas */
 }
 
-/* TIPOGRAFÍA GLOBAL */
+/* TIPOGRAFÍA GLOBAL (Consolidadas reglas duplicadas de body) */
 body {
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  background-image: none !important;
+  color: var(--dark-gray);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1, h2, h3,
@@ -46,8 +54,11 @@ h1, h2, h3,
   letter-spacing: 0.3px;
 }
 
+/* FRASE (Consolidadas reglas duplicadas) */
 .frase-motivadora {
-  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: var(--text-gray);
+  margin: 10px 0 20px;
   font-weight: 500;
   font-style: italic;
   letter-spacing: 0.2px;
@@ -59,30 +70,15 @@ main {
   padding: 0;
 }
 
-/* GLOBAL */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-color);
-  background-image: none !important;
-  color: var(--dark-gray);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 /* HEADER */
 .header {
   text-align: center;
-  padding: 15px 20px 0 20px; /* Añadido espacio para proteger los laterales */
+  padding: 15px 20px 0 20px; 
   background-color: var(--bg-color);
-  position: relative;        /* CLAVE: Permite posicionar los idiomas de forma absoluta */
+  position: relative;        
 }
 
-/* ==================================================== */
-/* NUEVO: ESTILOS DEL SELECTOR DE IDIOMAS (TOP RIGHT)   */
-/* ==================================================== */
-/* Contenedor principal (El óvalo blanco exterior de image_9bc71b.png) */
+/* SELECTOR DE IDIOMAS */
 .lang-selector {
   position: absolute;
   right: 20px;
@@ -92,11 +88,10 @@ body {
   background-color: var(--white);
   border: 1px solid var(--border-gray);
   padding: 3px;
-  border-radius: 999px; /* Consigue la forma de cápsula perfecta */
+  border-radius: 999px; 
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-/* Botones de idioma individuales */
 .btn-lang {
   background: none;
   border: none;
@@ -105,48 +100,44 @@ body {
   font-size: 12px;
   font-weight: 700;
   padding: 6px 14px;
-  border-radius: 999px; /* Hace que el fondo azul también sea un óvalo perfecto */
+  border-radius: 999px; 
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0.6;
 }
 
-/* El botón sobre el que pasas el ratón */
-.btn-lang:hover {
-  opacity: 1;
-}
-
-.btn-lang:active {
-  transform: scale(0.9); /* Se encoge sutilmente simulando un botón físico */
-}
-
+.btn-lang:hover { opacity: 1; }
+.btn-lang:active { transform: scale(0.9); }
 .btn-lang.activo {
-  background-color: var(--primary-blue); /* Usa tu azul suave del claro o cian del oscuro */
-  color: var(--white) !important;       /* Fuerza el texto a blanco puro */
+  background-color: var(--primary-blue); 
+  color: var(--white) !important;       
   opacity: 1;
 }
-/* ==================================================== */
 
 .logo {
   height: 70px;
   margin-bottom: 10px;
 }
 
+/* REPARADO: Corrección de tamaño máximo para evitar roturas en móviles */
 .logo-secundario {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   display: block;
   margin: 10px auto;
   opacity: 0.95;
 }
 
-/* FRASE */
-.frase-motivadora {
-  font-size: 1.2rem;
-  color: var(--text-gray);
-  margin: 10px 0 20px;
+/* CONTENEDOR DEL CHAT */
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
 }
 
-/* MENSAJES */
+/* REPARADO: Ajustado max-width a 600px para simetría perfecta con los mensajes */
 .messages {
   width: 100%;
   max-width: 600px;
@@ -159,22 +150,15 @@ body {
   gap: 12px;
 }
 
-/* CONTENEDOR DEL CHAT */
-.chat-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px;
-}
-
-/* ÁREA DE INPUT */
+/* REPARADO: Ajustado max-width a 600px para que el input se alinee con el chat */
 .input-area {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
+  padding: 0 20px;
+  box-sizing: border-box;
   gap: 16px;
 }
 
@@ -198,7 +182,7 @@ body {
   opacity: 0.7;
 }
 
-/* BOTÓN ENVIAR (ID) */
+/* BOTÓN ENVIAR */
 #btn {
   background-color: var(--primary-blue);
   color: var(--white);
@@ -217,7 +201,6 @@ body {
   transform: translateY(-1px);
 }
 
-/* CONTENEDOR DE BOTONES */
 .button-row {
   display: flex;
   justify-content: center;
@@ -225,7 +208,6 @@ body {
   width: 100%;
 }
 
-/* ESTILO BASE DE BOTONES */
 .btn {
   padding: 10px 24px;
   font-size: 0.95rem;
@@ -235,29 +217,21 @@ body {
   font-family: inherit;
 }
 
-/* BOTÓN GRIS: SECUNDARIO */
 .btn-secondary {
   background-color: var(--white);
   color: var(--text-gray);
   border: 1px solid var(--border-gray);
 }
+.btn-secondary:hover { background-color: var(--border-gray); }
 
-.btn-secondary:hover {
-  background-color: var(--border-gray);
-}
-
-/* BOTÓN AZUL: PRINCIPAL */
 .btn-primary {
   background-color: var(--primary-blue);
   color: var(--white);
   border: 1px solid var(--primary-blue);
 }
+.btn-primary:hover { background-color: var(--primary-hover); }
 
-.btn-primary:hover {
-  background-color: var(--primary-hover);
-}
-
-/* MENSAJES DEL BOT */
+/* BURBUJAS DE MENSAJES */
 .bot-message {
   align-self: flex-start;
   background: var(--white);
@@ -272,7 +246,16 @@ body {
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
-/* MENSAJES DEL USUARIO */
+/* Si tu HTML mete la tarjeta final DENTRO de un .bot-message, este parche evita que se rompa el fondo */
+.bot-message:has(.final-card) {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 .user-message {
   align-self: flex-end;
   background: var(--primary-blue);
@@ -286,7 +269,6 @@ body {
   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-/* BOTONES DE OPCIÓN EN MENSAJES */
 .opt-btn {
   display: block;
   margin: 5px 20px;
@@ -298,15 +280,19 @@ body {
   cursor: pointer;
 }
 
-/* TARJETA FINAL */
+/* REPARADO: TARJETA FINAL SIN DESPLAZAMIENTOS */
 .final-card {
   background: var(--white);
   border: 1px solid var(--border-gray);
   border-radius: 14px;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+  width: 100%;
   max-width: 600px;
+  box-sizing: border-box; /* CLAVE: Fuerza a que los bordes y el padding no estiren el elemento fuera de su sitio */
+  position: relative;
+  overflow: hidden;       /* Evita fugas visuales en las esquinas redondeadas */
 }
 
 .final-card-header {
@@ -333,14 +319,15 @@ body {
   margin-top: 18px;
   margin-bottom: 8px;
 }
+
 .final-list {
-  list-style-type: none !important; /* Elimina el punto */
-  padding-left: 0 !important;       /* Elimina el espacio a la izquierda */
+  list-style-type: none !important;
+  padding-left: 0 !important;      
   margin: 0 !important;
 }
 
 .final-list li {
-  list-style-type: none !important; /* Asegura que los items no tengan punto */
+  list-style-type: none !important;
   padding-left: 0 !important;
   margin-bottom: 6px;
   line-height: 1.4;
@@ -358,20 +345,20 @@ body {
   margin-top: 10px;
 }
 
-/* CUANDO EL BODY TIENE LA CLASE 'tema-oscuro', ESTAS VARIABLES REEMPLAZAN A LAS CLARAS */
+/* MODO OSCURO */
 body.tema-oscuro {
-  --bg-color: #000000;          /* Negro profundo para absorber la luz */
-  --white: #0B1021;             /* Azul medianoche súper oscuro para el fondo de las cajas/inputs */
+  --bg-color: #000000;          
+  --white: #0B1021;             
   
-  --primary-blue: #08F7FE;      /* Cian eléctrico puro */
-  --primary-hover: #09FBD3;     /* Verde neón puro para el hover */
+  --primary-blue: #08F7FE;      
+  --primary-hover: #09FBD3;     
   
-  --dark-gray: #FFFFFF;         /* El texto principal pasa a ser blanco puro */
-  --text-gray: #A0AEC0;         /* Texto secundario en gris claro */
-  --border-gray: #1A3644;       /* Bordes con un toque sutil de cian oscuro */
+  --dark-gray: #FFFFFF;         
+  --text-gray: #A0AEC0;         
+  --border-gray: #1A3644;       
 }
 
-/* Transición suave para que el cambio no sea brusco (Añadido .btn-lang y .lang-selector) */
-body, #input, .bot-message, .user-message, .btn, .btn-lang, .lang-selector {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+/* REPARADO: Añadido '.final-card' a las transiciones para evitar saltos bruscos de color */
+body, #input, .bot-message, .user-message, .btn, .btn-lang, .lang-selector, .final-card {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }

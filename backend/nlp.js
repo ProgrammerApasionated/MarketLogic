@@ -1,8 +1,3 @@
-const { pipeline, env } = require("@xenova/transformers");
-
-// Evitar crashes de hilos en Windows
-env.backends.onnx.wasm.numThreads = 1;
-
 // ==========================================
 // 1. DICCIONARIO MULTIIDIOMA Y PROFESIONES REALES
 // ==========================================
@@ -308,7 +303,7 @@ async function elegirPerfilPorNLP(historial) {
   perfilFinal.entornoRecomendadoDetalle = TEXTS.reporte[entorno].detalle;
   perfilFinal.empresas = TEXTS.reporte[entorno].empresas.join(" | ");
   perfilFinal.estrategiaMercado = TEXTS.reporte[entorno].estrategia;
-  perfilFinal.planAccionInmediato = [...TEXTS.reporte[entorno].plan, ...TEXTS.reporte[aprendizaje].plan].join("; ");
+  perfilFinal.planAccionInmediato = [...TEXTS.reporte[entorno].plan, ...TEXTS.reporte[aprendizaje].plan];
   perfilFinal.formacionRecomendada = TEXTS.reporte[aprendizaje].formacion;
 
   return { perfilId: "prof_detectada", perfilModificado: perfilFinal };

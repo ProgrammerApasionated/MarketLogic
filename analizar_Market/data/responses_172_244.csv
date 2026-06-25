@@ -1,0 +1,74 @@
+id,session_id,texto,created_at
+172,e2b26d99-a657-4dda-a1b5-254a198a47e7,fdsf,1779004020597
+173,4735de8f-bbc6-420d-bf7c-7815a50ddacd,"la fontaneria y electricidad",1779207137248
+174,4735de8f-bbc6-420d-bf7c-7815a50ddacd,"conocimentos de fontaneria electricidad y salud",1779207179320
+175,4735de8f-bbc6-420d-bf7c-7815a50ddacd,"entorno laboral y financiero",1779207222723
+176,4735de8f-bbc6-420d-bf7c-7815a50ddacd,"estructurado con coherencia",1779207261170
+177,36b48665-fa00-40b2-a2a9-7182520d25fe,"Informática y sistemas",1779207559813
+178,36b48665-fa00-40b2-a2a9-7182520d25fe,"Los sistemas operativos",1779207565579
+179,36b48665-fa00-40b2-a2a9-7182520d25fe,"Flexibilidad libre",1779207574557
+180,36b48665-fa00-40b2-a2a9-7182520d25fe,"Autodidacta bajo presión",1779207582292
+181,50be73c9-09ac-4057-a362-9477094dbe22,"La programación",1779215427583
+182,50be73c9-09ac-4057-a362-9477094dbe22,"Analizar datos",1779215436185
+183,50be73c9-09ac-4057-a362-9477094dbe22,"Estabilidad de estar contratado",1779215452533
+184,50be73c9-09ac-4057-a362-9477094dbe22,"Buscar yo la info",1779215464283
+185,c45a0e38-635b-4563-96e0-db13e8796e30,"La economía",1779215614815
+186,c45a0e38-635b-4563-96e0-db13e8796e30,"Hola, requiero asistencia para mapear mis horizontes laborales actuales.",1779215624102
+187,c45a0e38-635b-4563-96e0-db13e8796e30,"Hola, requiero asistencia para mapear mis horizontes laborales actuales.",1779215624765
+188,c45a0e38-635b-4563-96e0-db13e8796e30,"Hola, requiero asistencia para mapear mis horizontes laborales actuales.",1779215625566
+189,4c17160e-598b-4cb8-a26f-173e9b3896f5,"Hola, requiero asistencia para mapear mis horizontes laborales actuales.",1779215631316
+190,4c17160e-598b-4cb8-a26f-173e9b3896f5,"Hola, requiero asistencia para mapear mis horizontes laborales actuales.",1779215634141
+191,4c17160e-598b-4cb8-a26f-173e9b3896f5,"Hola, requiero asistencia para mapear mis horizontes laborales actuales.",1779215634765
+192,4c17160e-598b-4cb8-a26f-173e9b3896f5,"Hola, requiero asistencia para mapear mis horizontes laborales actuales.",1779215635028
+193,bb8d762b-72c3-409e-adc1-1f733eae03d8,"Las finanzas",1779215649888
+194,bb8d762b-72c3-409e-adc1-1f733eae03d8,"Diseñar interfaces",1779215657434
+195,bb8d762b-72c3-409e-adc1-1f733eae03d8,"Hola, requiero asistencia para mapear mis horizontes laborales actuales.",1779215662740
+196,bb8d762b-72c3-409e-adc1-1f733eae03d8,"Hola, requiero asistencia para mapear mis horizontes laborales actuales.",1779215663309
+197,2b79b63c-61f9-4802-9125-f0930134d7d7,"La economía",1779215879818
+198,2b79b63c-61f9-4802-9125-f0930134d7d7,"análisis de economía",1779215895483
+199,2b79b63c-61f9-4802-9125-f0930134d7d7,Freelance,1779215906725
+200,2b79b63c-61f9-4802-9125-f0930134d7d7,"Necesito clases estructuradas",1779215913609
+201,9c9e5423-361e-437f-805f-5c7e06e324bf,"La docencia",1779215927862
+202,af9fd2a9-2a77-4296-b6d6-d9533e216b6e,"código, datos, arquitectura, sistemas",1779216051615
+203,af9fd2a9-2a77-4296-b6d6-d9533e216b6e,"Maximizar la especialización técnica.",1779216056120
+204,af9fd2a9-2a77-4296-b6d6-d9533e216b6e,"Arquitecto Cloud, Ingeniero IA.",1779216065393
+205,e23d8d66-cae9-420e-9c9d-e8203b8bf5fe,"Me fascina entender cómo funcionan los servidores, programar en Python y solucionar errores en bases de datos.",1779216166656
+206,e23d8d66-cae9-420e-9c9d-e8203b8bf5fe,"Entendido. Dentro del mundo de la ingeniería de software y datos, ¿prefieres el desarrollo backend, la gestión de servidores cloud o el análisis profundo de datos?",1779216171183
+207,e23d8d66-cae9-420e-9c9d-e8203b8bf5fe,Seguridad,1779216174362
+208,e23d8d66-cae9-420e-9c9d-e8203b8bf5fe,Autodidacta,1779216177393
+209,46f77571-48e9-4872-a658-e94ab95394f3,"Siempre me ha gustado dibujar, crear identidades de marca y diseñar cómo debería verse una aplicación para que sea bonita.",1779216189694
+210,46f77571-48e9-4872-a658-e94ab95394f3,"Qué interesante. En el campo creativo, ¿te inclinas más por el diseño de interfaces (UX/UI), la dirección de arte publicitario o la creación de contenido audiovisual?",1779216194863
+211,46f77571-48e9-4872-a658-e94ab95394f3,Flexibilidad,1779216198045
+212,46f77571-48e9-4872-a658-e94ab95394f3,Autodidacta,1779216200530
+213,a17d254c-2cf8-4452-a13c-cf0fd99d1c30,"Disfruto mucho ayudando a la gente, enseñando cosas nuevas y apoyando a los estudiantes con dificultades en sus estudios.",1779216214744
+214,a17d254c-2cf8-4452-a13c-cf0fd99d1c30,"Noto una fuerte vocación humana. ¿Te visualizas más en el ámbito de la docencia y formación, o en el apoyo psicológico y desarrollo personal de otros?",1779216222391
+215,a17d254c-2cf8-4452-a13c-cf0fd99d1c30,Flexibilidad,1779216229606
+216,a17d254c-2cf8-4452-a13c-cf0fd99d1c30,Autodidacta,1779216232156
+217,af260395-2d8c-4b98-af9a-ccb814346178,"Me gusta el orden, llevar el control de los gastos, analizar cómo las empresas gestionan su dinero y organizar procesos internos.",1779216243346
+218,af260395-2d8c-4b98-af9a-ccb814346178,"Excelente enfoque. ¿Te ves mejor trabajando en el control y auditoría financiera, o prefieres gestionar proyectos y la estrategia corporativa dentro de una empresa?",1779216249325
+219,af260395-2d8c-4b98-af9a-ccb814346178,Flexibilidad,1779216252353
+220,af260395-2d8c-4b98-af9a-ccb814346178,Autodidacta,1779216256283
+221,b786143f-5b5d-4306-9522-23f8063ecaed,"Me fascina entender cómo funcionan los servidores, programar en Python y solucionar errores en bases de datos.",1779216445285
+222,b786143f-5b5d-4306-9522-23f8063ecaed,"Prefiero la gestión de servidores cloud",1779216449572
+223,b786143f-5b5d-4306-9522-23f8063ecaed,Seguridad,1779216454811
+224,b786143f-5b5d-4306-9522-23f8063ecaed,Autodidacta.,1779216458291
+225,2e7f2a3a-edd6-404c-882f-6e082a4f2a60,"Siempre me ha gustado dibujar, crear identidades de marca y diseñar cómo debería verse una aplicación para que sea bonita.",1779216471579
+226,2e7f2a3a-edd6-404c-882f-6e082a4f2a60,"Diseño de interfaces UX/UI.",1779216475699
+227,2e7f2a3a-edd6-404c-882f-6e082a4f2a60,Flexibilidad,1779216482444
+228,2e7f2a3a-edd6-404c-882f-6e082a4f2a60,Autodidacta.,1779216487979
+229,701b6cb3-3464-4b39-9b9c-db627c546d30,"Disfruto mucho ayudando a la gente, enseñando cosas nuevas y apoyando a los estudiantes con dificultades en sus estudios.",1779216498874
+230,701b6cb3-3464-4b39-9b9c-db627c546d30,"Docencia y formación",1779216502987
+231,701b6cb3-3464-4b39-9b9c-db627c546d30,Flexibilidad.,1779216507730
+232,701b6cb3-3464-4b39-9b9c-db627c546d30,Autodidacta.,1779216511018
+233,828ddc15-abea-4328-8110-1d4258e4d49d,"Me gusta el orden, llevar el control de los gastos, analizar cómo las empresas gestionan su dinero y organizar procesos internos.",1779216523474
+234,828ddc15-abea-4328-8110-1d4258e4d49d,"Control y auditoría financiera.",1779216526930
+235,828ddc15-abea-4328-8110-1d4258e4d49d,Flexibilidad,1779216529539
+236,828ddc15-abea-4328-8110-1d4258e4d49d,Autodidacta.,1779216532409
+237,cb043d72-1471-4027-9da4-3e0a68826959,"Programación",1779217041313
+238,cb043d72-1471-4027-9da4-3e0a68826959,Software,1779217046442
+239,cb043d72-1471-4027-9da4-3e0a68826959,Estabilidad,1779217050763
+240,cb043d72-1471-4027-9da4-3e0a68826959,Autodidacta,1779217056429
+241,603410f8-5341-4362-ae32-c683700afd3e,Programar,1779218577295
+242,603410f8-5341-4362-ae32-c683700afd3e,Sofware,1779218580891
+243,603410f8-5341-4362-ae32-c683700afd3e,Flexibilidad,1779218586412
+244,603410f8-5341-4362-ae32-c683700afd3e,Autodidacta,1779218593140

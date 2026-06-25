@@ -159,18 +159,25 @@ app.post("/mensaje", async (req, res) => {
           perfilFinalId = perfilRes.perfilId || "desconocido";
         }
       } catch (err) {
-        console.error("⚠️ Error controlado en nlp.elegirPerfilPorNLP:", err);
+        console.error("Error controlado en nlp.elegirPerfilPorNLP:", err);
       }
 
       // Aseguramos que existan arrays limpios para que el Frontend no rompa al mapear (.map)
       const recomendaciones = {
         mensaje_final: perfilFinalObj.description || "Tu perfil muestra fuertes competencias profesionales.",
-        entorno_detalle: perfilFinalObj.entornoRecomendadoDetalle || "Destacas por tu adaptabilidad en entornos corporativos y analíticos.",
-        estrategia: perfilFinalObj.estrategiaMercado || "Enfoca tu estrategia en la entrega de soluciones de alto valor medible.",
-        plan_accion: Array.isArray(perfilFinalObj.planAccionInmediato) ? perfilFinalObj.planAccionInmediato : ["Diseñar un portafolio interactivo de proyectos.", "Optimizar perfil enfocado a filtrados ATS."],
+        entorno_detalle: perfilFinalObj.entornoRecomendadoDetalle || "Destacas por tu adaptabilidad en entornos corporativos.",
+        estrategia: perfilFinalObj.estrategiaMercado || "Enfoca tu estrategia en la entrega de soluciones.",
+        
+        // REFACTORIZACIÓN DEL BLINDAJE:
+        plan_accion: Array.isArray(perfilFinalObj.planAccionInmediato) 
+          ? perfilFinalObj.planAccionInmediato 
+          : (typeof perfilFinalObj.planAccionInmediato === 'string' 
+              ? perfilFinalObj.planAccionInmediato.split('; ') // Por si acaso llegará un string antiguo
+              : ["Diseñar un portafolio interactivo de proyectos.", "Optimizar perfil enfocado a filtrados ATS."]),
+              
         lo_que_valora: Array.isArray(perfilFinalObj.valoresClave) ? perfilFinalObj.valoresClave : ["Autonomía", "Resolución de Problemas"],
-        empresas_sector: Array.isArray(perfilFinalObj.empresas) ? perfilFinalObj.empresas : ["Consultorías Tecnológicas", "Empresas con infraestructura distribuida"],
-        formacion_sugerida: Array.isArray(perfilFinalObj.formacionRecomendada) ? perfilFinalObj.formacionRecomendada : (Array.isArray(perfilFinalObj.formacion) ? perfilFinalObj.formacion : ["Especialización avanzada práctica"]),
+        empresas_sector: Array.isArray(perfilFinalObj.empresas) ? perfilFinalObj.empresas : ["Consultorías Tecnológicas"],
+        formacion_sugerida: perfilFinalObj.formacionRecomendada || ["Especialización avanzada práctica"],
         proyeccion_futuro: perfilFinalObj.proyeccion || "Alta demanda en el mercado actual."
       };
 

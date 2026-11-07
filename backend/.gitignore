@@ -48,6 +48,8 @@ build/
 database/*.sqlite
 database/*.db
 database/*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
 
 # ============================
 # 📝 Documentación generada
